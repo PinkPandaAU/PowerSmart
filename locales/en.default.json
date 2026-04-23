@@ -1,0 +1,26 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_text": "Skip to content"
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your cart",
+      "empty": "Your cart is empty",
+      "continue_shopping": "Continue shopping",
+      "checkout": "Check out",
+      "subtotal": "Subtotal"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "current": {
+    "color_primary": "#0a6cff",
+    "color_background": "#ffffff",
+    "color_text": "#121212",
+    "type_body_font": "assistant_n4",
+    "type_header_font": "assistant_n7"
+  },
+  "presets": {
+    "Default": {
+      "color_primary": "#0a6cff",
+      "color_background": "#ffffff",
+      "color_text": "#121212",
+      "type_body_font": "assistant_n4",
+      "type_header_font": "assistant_n7"
+    }
+  }
+}
