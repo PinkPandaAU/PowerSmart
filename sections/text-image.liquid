@@ -1,0 +1,46 @@
+{%- if section.settings.image != blank or section.settings.subtitle != blank or section.settings.heading != blank or section.settings.body != blank -%}
+    <div class="container container--sm">
+        <div class="text-image__wrapper">
+            {%- if section.settings.image != blank -%}
+                <div class="text-image__visual">
+                    <figure class="img-parallax">
+                        <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.image_alt }}" />
+                    </figure>
+                </div>
+            {%- endif -%}
+
+            {%- if section.settings.subtitle != blank or section.settings.heading != blank or section.settings.body != blank -%}
+                <div class="text-image__text fade-in-wrapper">
+                    {%- if section.settings.subtitle != blank -%}
+                        <div class="subtitle">{{ section.settings.subtitle }}</div>
+                    {%- endif -%}
+
+                    {%- if section.settings.heading != blank -%}
+                        <h2>{{ section.settings.heading }}</h2>
+                    {%- endif -%}
+
+                    {%- if section.settings.body != blank -%}
+                        <p>{{ section.settings.body }}</p>
+                    {%- endif -%}
+                </div>
+            {%- endif -%}
+        </div>
+    </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Text Image",
+  "tag": "section",
+  "class": "text-image",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Battery Peace of Mind" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Practice good lithium <span>battery</span> <span>care</span>" },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Lithium batteries are safe and reliable when used correctly, but like all batteries, they naturally degrade over time. For peace of mind, we recommend replacing your PowerSmart<sup>TM</sup> roller shutter battery every 3 - 4 years. Replacing your battery keeps your shutters running smoothly and your home safe. Think of it like checking your smoke alarm battery - a simple step for safety and reassurance." }
+  ],
+  "presets": [
+    { "name": "Text Image" }
+  ]
+}
+{% endschema %}
