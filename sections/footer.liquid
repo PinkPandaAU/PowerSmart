@@ -1,0 +1,136 @@
+ <div class="container container--sm">
+    <div class="footer__top">
+        <div class="footer__logo">
+            <a href="{{ routes.root_url }}"><img src="{{ 'logo-footer.svg' | asset_url }}" alt="logo" /></a>
+        </div>
+        {% if section.settings.footer_email != blank %}
+            <div class="footer__mail">
+                <a href="mailto:{{ section.settings.footer_email }}">{{ section.settings.footer_email }}</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="footer__center">
+        <div class="footer__company">
+            <figure>
+                <a href="http://cwproducts.com.au/" target="_blank">
+                    <img src="images/cw-logo.svg" alt="cw logo" />
+                </a>
+            </figure>
+            <p>PowerSmart is a CW Products brand Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+        <div class="footer__menu">
+            <ul>
+                <li>
+                    <a class="link" href="#batteryCare">
+                        <span class="link__text">
+                            <span>Battery Care</span>
+                            <span class="duplicate">Battery Care</span>
+                        </span>
+                        <span class="link__icon">
+                            <span>
+                                <svg width="13" height="9"><use xlink:href="images/sprite.svg#arr-navy"></use></svg>
+                            </span>
+                            <span class="duplicate">
+                                <svg width="13" height="9"><use xlink:href="images/sprite.svg#arr-navy"></use></svg>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="link" href="#education">
+                        <span class="link__text">
+                            <span>Education</span>
+                            <span class="duplicate">Education</span>
+                        </span>
+                        <span class="link__icon">
+                            <span>
+                                <svg width="13" height="9"><use xlink:href="images/sprite.svg#arr-navy"></use></svg>
+                            </span>
+                            <span class="duplicate">
+                                <svg width="13" height="9"><use xlink:href="images/sprite.svg#arr-navy"></use></svg>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% if section.blocks.size > 0 %}
+        <div class="footer__bottom">
+            <ul>
+                {% for block in section.blocks %}
+                    <li><a href="{{ block.settings.menu_link }}">{{ block.settings.menu_title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+
+
+{% schema %}
+{
+    "name": "Footer",
+    "tag": "footer",
+    "class": "footer",
+    "settings": [
+        {
+            "type": "text",
+            "id": "footer_email",
+            "label": "Footer Email"
+        },
+        {
+            "type": "image_picker",
+            "id": "secondary_logo",
+            "label": "Secondary Logo"
+        },
+        {
+            "type": "url",
+            "id": "secondary_logo_link",
+            "label": "Secondary Logo Link"
+        },
+        {
+            "type": "textarea",
+            "id": "company_description",
+            "label": "Company Description"
+        },
+        {
+            "type": "text",
+            "id": "primary_link_text",
+            "label": "Primary Link Text"
+        },
+        {
+            "type": "url",
+            "id": "primary_link_url",
+            "label": "Primary Link URL"
+        },
+        {
+            "type": "text",
+            "id": "secondary_link_text",
+            "label": "Secondary Link Text"
+        },
+        {
+            "type": "url",
+            "id": "secondary_link_url",
+            "label": "Secondary Link URL"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "bottom_menu_item",
+            "name": "Bottom Menu Item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "menu_title",
+                    "label": "Menu Title"
+                },
+                {
+                    "type": "url",
+                    "id": "menu_link",
+                    "label": "Menu Link"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
