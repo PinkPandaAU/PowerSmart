@@ -6,6 +6,7 @@ const gulp = require("gulp"),
   sourcemaps = require("gulp-sourcemaps"),
   cache = require("gulp-cached"),
   del = require("del"),
+  flatten = require("gulp-flatten"),
   sass = require("gulp-sass")(require("sass")),
   sassGlob = require("gulp-sass-glob"),
   svgSprite = require("gulp-svg-sprite");
@@ -20,22 +21,22 @@ const gulp = require("gulp"),
   favicons: "favicons/**/*.*",
 }),
   (build = {
-    images: "../assets/images",
+    images: "../assets",
     css: "../assets",
     js: "../assets",
-    favicons: "../assets/favicons",
+    favicons: "../assets",
   });
 
 function favicons() {
-  return gulp.src(src.favicons).pipe(gulp.dest(build.favicons));
+  return gulp.src(src.favicons).pipe(flatten()).pipe(gulp.dest(build.favicons));
 }
 
 function fonts() {
-  return gulp.src("fonts/**/*.{eot,svg,ttf,woff,woff2}").pipe(gulp.dest("../assets/fonts"));
+  return gulp.src("fonts/**/*.{eot,svg,ttf,woff,woff2}").pipe(flatten()).pipe(gulp.dest("../assets"));
 }
 
 function images() {
-  return gulp.src(src.images).pipe(cache()).pipe(gulp.dest(build.images));
+  return gulp.src(src.images).pipe(cache()).pipe(flatten()).pipe(gulp.dest(build.images));
 }
 
 function icons() {
@@ -85,7 +86,7 @@ function themeJS() {
 }
 
 function cleanAssets() {
-  return del(["../assets/images/*", "../assets/fonts/*", "../assets/favicons/*", "../assets/style.css", "../assets/theme.js", "../assets/plugins.js", "../assets/sprite.svg"], { force: true });
+  return del(["../assets/images", "../assets/fonts", "../assets/favicons", "../assets/style.css", "../assets/theme.js", "../assets/plugins.js", "../assets/sprite.svg"], { force: true });
 }
 
 function watch(done) {
