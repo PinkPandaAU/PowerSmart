@@ -1,8 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-index"
+      "type": "main-index",
+      "settings": {
+        "heading": "Welcome to PowerSmart",
+        "subheading": "Smart power solutions for every home and business."
+      }
+    },
+    "hero_FwkKej": {
+      "type": "hero",
+      "name": "Hero",
+      "settings": {
+        "section_id": "home",
+        "heading_text": "It’s time to <span>replace</span> your roller shutter <span>battery</span>",
+        "body_text": "For safety and peace of mind, lithium batteries should be replaced every 3–4 years..",
+        "button_label": "Buy Now",
+        "button_link": "",
+        "modal_video_url": ""
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "hero_FwkKej"
+  ]
 }
