@@ -1,0 +1,61 @@
+.text-page {
+  --container-max: 866px;
+  padding: 52px 0;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 2;
+  background-color: $white;
+  color: $dark-blue;
+
+  h2 {
+    margin: 32px 0 12px;
+  }
+
+  h3 {
+    margin: 32px 0 8px;
+  }
+
+  h4 {
+    margin: 32px 0 10px;
+  }
+
+  p,
+  ul,
+  ol {
+    margin: 0 0 12px;
+
+    a {
+      @include link-lined-dbl;
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding: 0 0 0 14px;
+
+      &::before {
+        content: "";
+        border-radius: 5px;
+        width: 4px;
+        height: 4px;
+        background-color: $blue;
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 84px 0 97px;
+    border-radius: 32px 32px 0 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+    border-radius: 52px 52px 0 0;
+  }
+}

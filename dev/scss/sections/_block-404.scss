@@ -1,0 +1,31 @@
+.block-404 {
+  --container-max: 866px;
+  padding: 116px 0 52px;
+  text-align: center;
+
+  h1 {
+    margin: 0 0 32px;
+    justify-content: center;
+
+    .single-word {
+      padding: 0 0.1em 0.1em;
+    }
+  }
+
+  p {
+    max-width: 35em;
+    margin: 0 auto 32px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 180px 0 68px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 202px 0 110px;
+
+    p {
+      margin-bottom: 42px;
+    }
+  }
+}

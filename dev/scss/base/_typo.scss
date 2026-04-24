@@ -1,0 +1,135 @@
+input,
+select,
+textarea,
+button {
+  font-family: $font-family-base;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: clamp($font-size-base-sm, get-vw($font-size-base), $font-size-base);
+  line-height: $line-height-base-sm;
+  color: $body-color;
+
+  @include media-breakpoint-up(lg) {
+    line-height: $line-height-base;
+  }
+}
+
+* {
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  color: inherit;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+h1,
+.h1 {
+  font-family: $ff-alt-black;
+  font-size: clamp($h1-font-size-sm, get-vw($h1-font-size), $h1-font-size);
+  line-height: 1.14;
+
+  span {
+    color: $blue;
+  }
+}
+
+h2,
+.h2 {
+  font-family: $ff-alt-black;
+  font-size: clamp($h2-font-size-sm, get-vw($h2-font-size), $h2-font-size);
+  line-height: 1.25;
+
+  span {
+    color: $blue;
+  }
+
+  @include media-breakpoint-up(lg) {
+    line-height: 1.12;
+  }
+}
+
+h3,
+.h3 {
+  font-family: $ff-alt-black;
+  font-size: clamp($h3-font-size-sm, get-vw($h3-font-size), $h3-font-size);
+  line-height: 1.34;
+
+  span {
+    color: $blue;
+  }
+}
+
+h4,
+.h4 {
+  font-family: $ff-md;
+  font-size: clamp($h4-font-size-sm, get-vw($h4-font-size), $h4-font-size);
+  line-height: 1.31;
+
+  @include media-breakpoint-up(lg) {
+    line-height: 1.3;
+  }
+}
+
+h5,
+.h5 {
+  font-family: $ff-md;
+  font-size: clamp($h5-font-size-sm, get-vw($h5-font-size), $h5-font-size);
+  line-height: 1.31;
+
+  @include media-breakpoint-up(lg) {
+    line-height: 1.33;
+  }
+}
+
+.subtitle {
+  font-family: $ff-b;
+  font-size: 11px;
+  line-height: 118%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $dark-blue;
+  background-color: $gray-200;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 13px;
+    line-height: 131%;
+    height: 26px;
+    padding: 0 12px;
+  }
+}
+
+strong {
+  font-family: $ff-b;
+}
+
+p,
+ul,
+ol,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+em {
+  font-style: normal;
+}

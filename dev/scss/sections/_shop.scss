@@ -1,0 +1,31 @@
+.shop {
+  padding: 52px 0 0;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 2;
+  background-color: $white;
+
+  .products__grid {
+    margin-bottom: 32px;
+  }
+
+  @include media-breakpoint-up(md) {
+    .products__grid {
+      grid-template-columns: repeat(2, minmax(0, 417px));
+      justify-content: center;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 84px 0 0;
+    border-radius: 32px 32px 0 0;
+
+    .products__grid {
+      margin-bottom: 42px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    border-radius: 52px 52px 0 0;
+  }
+}

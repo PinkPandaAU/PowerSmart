@@ -1,0 +1,75 @@
+.block-account {
+  --container-max: 866px;
+  padding: 52px 0;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 2;
+  background-color: $white;
+
+  &__menu {
+    margin: 0 0 42px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+
+      li {
+        margin: 0 10px 0 0;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        .button {
+          --btn-bg: #{$white};
+          --btn-border: #{$gray-400};
+          --btn-color: #{$dark-blue};
+          --btn-bg-hover: #{$dark-blue};
+          --btn-border-hover: #{$dark-blue};
+          --btn-color-hover: #{$white};
+          height: 42px;
+          font-size: 16px;
+          border-radius: 5px;
+          padding: 0 18px;
+
+          &__wrapper {
+            margin: 0;
+            padding: 0;
+          }
+
+          &:hover {
+            .button__wrapper {
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        &.active {
+          .button {
+            --btn-bg: #{$blue};
+            --btn-border: #{$blue};
+            --btn-color: #{$white};
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+
+  h3 {
+    margin: 0 0 26px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 84px 0;
+    border-radius: 32px 32px 0 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 110px 0;
+    border-radius: 52px 52px 0 0;
+  }
+}

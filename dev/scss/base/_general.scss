@@ -1,0 +1,98 @@
+:root {
+  --container-spacer: #{$container-padding};
+  --container-max: #{$container-max};
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: unset !important;
+  width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  @include hl($navy, $white);
+}
+
+body {
+  --topbar: 0;
+  background-color: $body-bg;
+}
+
+button {
+  color: inherit;
+  @include btn-reset;
+  cursor: pointer;
+}
+
+.global-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: clip;
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1 1 auto;
+  }
+
+  .footer {
+    flex: 0 0 auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 42px;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  padding-left: calc(var(--container-spacer) * 0.5);
+  padding-right: calc(var(--container-spacer) * 0.5);
+  max-width: calc(var(--container-max) + var(--container-spacer));
+
+  &--sm {
+    --container-max: 1162px;
+
+    @include media-breakpoint-up(lg) {
+      --container-spacer: 8rem;
+    }
+  }
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  transition: all 0.2s;
+  text-decoration: underline;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.text-center {
+  text-align: center;
+}

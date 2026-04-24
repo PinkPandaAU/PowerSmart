@@ -1,0 +1,53 @@
+.faqs {
+  padding: 42px 0 32px;
+
+  &__header {
+    text-align: center;
+    margin: 0 0 24px;
+
+    h2 {
+      justify-content: center;
+      margin: 16px 0;
+
+      .single-word {
+        padding: 0 0.14em 0.1em;
+      }
+    }
+  }
+
+  .accordion {
+    display: grid;
+    gap: 10px;
+
+    &__col {
+      display: grid;
+      gap: 10px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 60px 0;
+
+    .accordion {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      align-items: start;
+
+      &__col {
+        gap: 16px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 94px 0 110px;
+
+    &__header {
+      margin: 0 0 42px;
+
+      h2 {
+        margin: 32px 0;
+      }
+    }
+  }
+}

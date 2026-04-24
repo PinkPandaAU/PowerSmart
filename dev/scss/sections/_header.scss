@@ -1,0 +1,255 @@
+.header {
+  --lc-border: #e5f3f7;
+  --lc-bg: #e5f3f7;
+  --lc-color: #{$navy};
+  --header-color: #{$navy};
+  --header-bg: #{$white};
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  color: var(--header-color);
+  padding-top: var(--topbar);
+  background-color: var(--header-bg);
+  transition:
+    transform 0.35s,
+    padding-top 0.3s linear;
+
+  &__bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: $blue;
+    color: $white;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.25s linear;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    color: $white;
+    font-family: $ff-b;
+    font-size: 12px;
+    line-height: 133%;
+
+    &.is-shown {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    svg {
+      margin: 0 5px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+  }
+
+  &__main {
+    position: relative;
+    z-index: 10;
+    transition: $transition;
+    border-bottom: 1px solid $navy-150;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+    .link-user,
+    .button {
+      display: none;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 2;
+    padding: 12px 0 13px;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      width: 185px;
+      height: 48px;
+
+      path {
+        transition: $transition;
+
+        &:not(.logo-accent) {
+          fill: var(--header-color);
+        }
+      }
+    }
+  }
+
+  &__cart {
+    position: relative;
+
+    &-number {
+      position: absolute;
+      top: -1px;
+      right: -2px;
+      border-radius: 7px;
+      width: 14px;
+      height: 14px;
+      background-color: $blue;
+      font-family: $ff-b;
+      font-size: 10px;
+      line-height: 130%;
+      text-align: center;
+      color: $white;
+      transition: $transition;
+    }
+  }
+
+  &.headroom--not-top {
+    transform: translateY(calc(var(--topbar) * -1));
+
+    &.headroom--unpinned {
+      transform: translateY(-100%);
+    }
+
+    &.headroom--pinned {
+      transform: translateY(calc(var(--topbar) * -1));
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &.nav-opened {
+      --header-color: #{$white};
+      --lc-border: #{$white-150};
+      --lc-bg: #{$white-150};
+      --lc-color: #{$white};
+
+      .header__cart {
+        &-number {
+          color: $navy;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__bar {
+      height: 42px;
+      font-size: 16px;
+      line-height: 131%;
+
+      svg {
+        margin: 0 10px;
+      }
+
+      a {
+        margin-left: 6px;
+
+        span {
+          display: inline-block;
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -2px;
+            width: 100%;
+            height: 1px;
+            background-color: $white;
+            transform: scaleX(0);
+            transform-origin: right center;
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+          }
+        }
+
+        &:hover {
+          span {
+            &::after {
+              transform: scaleX(1);
+              transform-origin: left center;
+            }
+          }
+        }
+      }
+    }
+
+    &__buttons {
+      .link-user {
+        display: flex;
+      }
+      .button {
+        display: inline-flex;
+
+        &__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $blue;
+          width: 24px;
+          height: 24px;
+          border-radius: 100%;
+
+          span {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.2, 1.33, 0.25, 1);
+            transform: translateY(0%) rotate(0.001deg);
+            transform-origin: left bottom;
+
+            &.duplicate {
+              position: absolute;
+              transform-origin: right top;
+              transform: translateY(101%) rotate(-12deg);
+              user-select: none;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+
+    &__logo {
+      padding: 22px 0 21px;
+
+      svg {
+        width: 247px;
+        height: 48px;
+      }
+    }
+
+    &__cart {
+      margin: 0 22px 0 8px;
+      &-number {
+        top: -3px;
+        right: -5px;
+        border-radius: 100%;
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+// font-family
+$ff-reg: "Aeonik", sans-serif;
+$ff-md: "Aeonik Medium", sans-serif;
+$ff-b: "Aeonik Bold", sans-serif;
+$ff-alt-black: "VAG Rounded Black", sans-serif;
+
+$font-family-base: $ff-reg;
+
+// colors
+$black: #000;
+$white: #fff;
+$white-100: rgba(255, 255, 255, 0.1);
+$white-150: rgba(255, 255, 255, 0.15);
+
+$navy: #002341;
+$navy-150: rgba(0, 35, 65, 0.15);
+$deep-navy: #003059;
+
+$light-blue: #e5f3f7;
+$blue: #00aeef;
+$blue1: #5433eb;
+$dark-blue: #334e66;
+$dark-blue1: #304659;
+
+$gray-100: #f5f9fa;
+$gray-200: #f0f5f7;
+$gray-300: #ebf4f7;
+$gray-400: #dae3e5;
+
+$body-bg: $white;
+$body-color: $navy;
+
+// font-size
+$font-size-base: 1rem;
+$line-height-base: 1.31;
+$font-size-base-sm: 0.875rem;
+$line-height-base-sm: 1.36;
+
+$h1-font-size: 4.625rem;
+$h2-font-size: 3.25rem;
+$h3-font-size: 2rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+
+$h1-font-size-sm: 2.625rem;
+$h2-font-size-sm: 2rem;
+$h3-font-size-sm: 1.625rem;
+$h4-font-size-sm: 1rem;
+$h5-font-size-sm: 0.875rem;
+
+$container-padding: 2rem;
+$container-max: 1456px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1080px,
+  xl: 1400px,
+  xxl: 1900px,
+);
+
+$transition: all 0.25s linear;
+
+$acc-plus: url("data:image/svg+xml,<svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M6 1V11' stroke='white' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round' /><path d='M1 6H11' stroke='white' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round' /></svg>");
+$acc-minus: url("data:image/svg+xml,<svg width='12' height='2' viewBox='0 0 12 2' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1H11' stroke='white' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round' /></svg>");
+
+$bc: url("data:image/svg+xml,<svg width='5' height='8' viewBox='0 0 5 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0.75 6.75L3.75 3.75L0.75 0.75' stroke='#002341' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' /></svg>");

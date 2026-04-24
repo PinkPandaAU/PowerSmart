@@ -1,0 +1,140 @@
+.panel {
+  background-color: $light-blue;
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__wrapper {
+    border-bottom: 4px solid $blue;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+    background: $white;
+    overflow: hidden;
+  }
+
+  &__text {
+    padding: 20px 20px 0px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 52px;
+    height: 52px;
+    background-color: $gray-200;
+    margin: 0 0 20px;
+  }
+
+  h2 {
+    color: $dark-blue1;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 0 0 24px;
+  }
+
+  &__visual {
+    margin: 0 0 -5px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &--last {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 50%;
+      background-color: $white;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    &__text {
+      padding: 20px;
+    }
+
+    h2 {
+      max-width: 9.5em;
+    }
+
+    p {
+      max-width: 29.75em;
+    }
+
+    &__visual {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__wrapper {
+      grid-template-columns: auto 61.54%;
+    }
+
+    &__text {
+      align-self: center;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    &__wrapper {
+      border-radius: 32px 32px 0 0;
+      border-bottom-width: 5px;
+    }
+
+    &__text {
+      padding: 42px;
+    }
+
+    &__icon {
+      border-radius: 20px;
+      width: 68px;
+      height: 68px;
+      margin: 0 0 32px;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin: 0 0 42px;
+    }
+
+    &__visual {
+      margin: 0 0 -5px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.pswp__img {
+  image-rendering: auto;
+  transform: translate3d(0, 0, 0);
+}
+.gallery img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

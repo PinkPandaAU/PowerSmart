@@ -1,0 +1,90 @@
+.orders-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid $gray-400;
+  border-radius: 20px;
+
+  th,
+  td {
+    padding: 0 16px;
+    text-align: left;
+    border-bottom: 1px solid $gray-400;
+    height: 42px;
+    vertical-align: middle;
+  }
+
+  th {
+    font-family: $ff-b;
+    font-size: 13px;
+    line-height: 131%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  td {
+    color: $dark-blue;
+  }
+
+  tr {
+    &:last-child {
+      td {
+        border: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    border: none;
+    border-radius: 0;
+
+    thead {
+      display: none;
+    }
+
+    tbody,
+    tr,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    tr {
+      margin-bottom: 16px;
+      border: 1px solid $gray-400;
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border: none;
+      color: $dark-blue;
+      font-size: 16px;
+    }
+
+    td::before {
+      content: attr(data-label);
+      font-family: $ff-b;
+      font-size: 13px;
+      line-height: 131%;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $navy;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    th {
+      width: 167px;
+
+      &:first-child,
+      &:last-child {
+        width: 183px;
+      }
+    }
+  }
+}

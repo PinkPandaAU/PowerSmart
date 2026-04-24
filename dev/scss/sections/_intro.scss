@@ -1,0 +1,63 @@
+.intro {
+  border-radius: 20px 20px 0 0;
+  padding: 42px 0;
+  background-color: $light-blue;
+  position: relative;
+  z-index: 9;
+
+  &__wrapper {
+    border-top: 3px solid $blue;
+    padding: 18px 0 0;
+  }
+
+  h4 {
+    color: $dark-blue;
+    margin: 0 0 12px;
+  }
+
+  p {
+    margin: 0;
+    font-size: clamp(1.125rem, get-vw(2rem), 2rem);
+    line-height: 1.44;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 60px 0;
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 200px auto;
+      gap: 32px;
+    }
+
+    h4 {
+      max-width: 10em;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-radius: 32px 32px 0 0;
+    padding: 9vh 0 107px;
+
+    &__wrapper {
+      padding: 24px 0 0;
+      gap: 52px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    border-radius: 52px 52px 0 0;
+
+    &__wrapper {
+      gap: 136px;
+    }
+
+    @media (max-height: 900px) {
+      padding-top: 7vh;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.img-parallax {
+  overflow: hidden;
+  img {
+    transform: scale(1.1);
+    transform-origin: center;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transition: all 450ms linear 0.25s;
+
+  &.in-view {
+    opacity: 1;
+  }
+}
+
+.fade-in-wrapper {
+  & > * {
+    &:not(h2) {
+      opacity: 0;
+      transition: all 450ms linear 0.25s;
+
+      &.in-view {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+h1,
+h2,
+h3 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.27em;
+
+  span {
+    display: block;
+  }
+
+  .single-word {
+    display: block !important;
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 -0.1em;
+    padding: 0 0.27em 0.1em 0;
+
+    &-inner {
+      position: relative;
+      transform: translateY(120%) rotate(6deg);
+      transform-origin: left top;
+    }
+  }
+}

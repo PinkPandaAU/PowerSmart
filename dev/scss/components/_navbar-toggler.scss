@@ -1,0 +1,67 @@
+.navbar-toggler {
+  --toggler-spacer-init: 5px;
+  --toggler-spacer: 5px;
+  --toggler-color-active: #{$white};
+  width: 42px;
+  height: 42px;
+  background-color: transparent;
+  border: 2px solid $blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-left: 7px;
+
+  &__icon {
+    display: block;
+    padding: 0;
+    width: 16px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--header-color);
+    position: relative;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--header-color);
+      transition: all 0.2s linear;
+      transform-origin: center;
+    }
+
+    &:before {
+      top: calc(var(--toggler-spacer-init) * -1);
+    }
+
+    &:after {
+      bottom: calc(var(--toggler-spacer-init) * -1);
+    }
+  }
+
+  &.active {
+    .navbar-toggler__icon {
+      background: none;
+      &:before,
+      &:after {
+        background-color: var(--toggler-color-active);
+      }
+
+      &:before {
+        transform: translateY(var(--toggler-spacer)) rotate(45deg);
+      }
+
+      &:after {
+        transform: translateY(calc(var(--toggler-spacer) * -1)) rotate(-45deg);
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}

@@ -1,0 +1,47 @@
+.cp-offer {
+  border-left: 4px solid $blue;
+  border-radius: 0 16px 16px 0;
+  padding: 11px 16px 12px;
+  background-color: $light-blue;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-family: $ff-md;
+    font-size: 14px;
+    line-height: 129%;
+
+    svg {
+      width: 16px;
+      margin: 0 5px 0 0;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: $dark-blue;
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-left-width: 5px;
+    border-radius: 0 20px 20px 0;
+    padding: 16px 20px 16px 15px;
+    max-width: 400px;
+
+    &__title {
+      font-size: 18px;
+      line-height: 133%;
+      margin: 0 0 3px;
+
+      svg {
+        width: 24px;
+        margin: 0 8px 0 0;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 131%;
+    }
+  }
+}

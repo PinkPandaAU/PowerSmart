@@ -1,0 +1,97 @@
+label,
+select {
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form {
+  &-field {
+    margin: 0 0 24px;
+  }
+
+  &-submit {
+    padding: 8px 0 0;
+  }
+
+  &-label {
+    display: block;
+    margin: 0 0 8px;
+    font-family: $ff-md;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 138%;
+    letter-spacing: 0.04em;
+    color: $dark-blue;
+
+    span {
+      color: $blue;
+    }
+  }
+
+  &-control {
+    display: block;
+    width: 100%;
+    padding: 12px 19px 14px;
+    font-family: $ff-reg;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $navy;
+    appearance: none;
+    background-color: $gray-100;
+    background-clip: padding-box;
+    border: 1px solid $gray-400;
+    border-radius: 8px;
+    outline: 1px solid transparent;
+    outline-offset: -2px;
+    transition:
+      border-color 0.15s ease-in-out,
+      outline 0.15s ease-in-out;
+    @include placeholder($navy, 0.5);
+    height: 52px;
+    margin: 0;
+
+    &:focus {
+      box-shadow: none;
+      outline: 1px solid $blue;
+      color: $navy;
+      border-color: $blue;
+      background-color: $gray-100;
+    }
+  }
+
+  &-actions {
+    a {
+      @include link-lined-dbl;
+      font-size: 16px;
+      line-height: 131%;
+    }
+
+    &--password {
+      float: right;
+      margin: -3px 0 0;
+
+      a {
+        font-family: $ff-md;
+        font-size: 13px;
+        line-height: 138%;
+        letter-spacing: 0.04em;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 24px;
+    }
+  }
+}

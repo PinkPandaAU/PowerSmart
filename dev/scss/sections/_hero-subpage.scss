@@ -1,0 +1,81 @@
+.hero-subpage {
+  --hero-overlap: 20px;
+
+  text-align: center;
+  background-color: $light-blue;
+  padding: 116px 0 52px;
+  margin: 0 0 calc(var(--hero-overlap) * -1);
+  overflow: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    background: url(../images/bg/mark-gray.svg) 0 / cover no-repeat;
+    position: absolute;
+    transform-origin: center;
+    width: 267px;
+    height: 420px;
+  }
+
+  &::before {
+    content: "";
+    left: 50%;
+    bottom: 0;
+    transform: translate3d(-50%, 0, 0) rotate(45deg);
+  }
+
+  h1 {
+    justify-content: center;
+    margin: 0 0 42px;
+
+    .single-word {
+      padding: 0 0.1em 0.1em;
+    }
+  }
+
+  a {
+    @include link-lined-dbl;
+  }
+
+  @include media-breakpoint-up(md) {
+    &::before {
+      left: 0;
+      bottom: auto;
+      top: 130px;
+      transform: translate3d(-50%, 0, 0) rotate(-150deg);
+    }
+
+    &::after {
+      content: "";
+      right: 0;
+      top: 50%;
+      transform: translate3d(0, -50%, 0) rotate(-30deg);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    --hero-overlap: 32px;
+    padding: 180px 0 68px;
+
+    &::before {
+      transform: translate3d(0, 0, 0) rotate(-150deg);
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    --hero-overlap: 52px;
+    padding: 228px 0 94px;
+
+    &::before {
+      left: 11.875%;
+    }
+
+    &::after {
+      right: 5.9%;
+    }
+
+    h1 {
+      margin: 0 0 68px;
+    }
+  }
+}

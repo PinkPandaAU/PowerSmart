@@ -1,0 +1,276 @@
+@mixin placeholder($color: $placeholder-color, $opacity: 1) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+}
+
+@mixin hideScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin abs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+@mixin abs-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@mixin img-fit {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin img-abs-container($p) {
+  display: block;
+  position: relative;
+  padding-top: $p;
+
+  img,
+  video,
+  iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@mixin hl($c1: transparent, $c2: transparent) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &::selection {
+    background-color: $c1;
+    color: $c2;
+  }
+  &::-moz-selection {
+    background-color: $c1;
+    color: $c2;
+  }
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function get-vw($font) {
+  $fs-px: $font * 16 / 1rem;
+  @return #{$fs-px / 1920 * 100}vw;
+}
+
+@mixin btn-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+  border-radius: 0;
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $max: map-get($breakpoints, $name);
+  @return if($max and $max > 0, $max - 0.02, null);
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+$escaped-characters: (("<", "%3c"), (">", "%3e"), ("#", "%23"), ("(", "%28"), (")", "%29"));
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+@function escape-svg($string) {
+  @if str-index($string, "data:image/svg+xml") {
+    @each $char, $encoded in $escaped-characters {
+      @if str-index($string, "url(") == 1 {
+        $string: url("#{str-replace(str-slice($string, 6, -3), $char, $encoded)}");
+      } @else {
+        $string: str-replace($string, $char, $encoded);
+      }
+    }
+  }
+
+  @return $string;
+}
+
+@mixin gutterY($spacing) {
+  margin-top: calc(#{$spacing} * -1);
+
+  & > div {
+    margin-top: $spacing;
+  }
+}
+
+@mixin gutterX($spacing) {
+  margin-left: calc(#{$spacing} * -0.5);
+  margin-right: calc(#{$spacing} * -0.5);
+
+  & > div {
+    padding-left: calc(#{$spacing} * 0.5);
+    padding-right: calc(#{$spacing} * 0.5);
+  }
+}
+
+@mixin link-lined($color: $body-color, $height: 1px, $bottom: -3px) {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: $bottom;
+    width: 100%;
+    height: $height;
+    background-color: $color;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  @include media-breakpoint-up(lg) {
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left center;
+      }
+    }
+  }
+}
+
+@mixin link-lined-dbl {
+  display: inline-flex;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    border-bottom: 1px solid $dark-blue;
+    bottom: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+  }
+  &::before {
+    transform: translateX(-110%);
+  }
+
+  @include media-breakpoint-up(lg) {
+    &:hover {
+      &::before {
+        transform: translateX(0);
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+      }
+      &::after {
+        transform: translateX(110%);
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    }
+  }
+}

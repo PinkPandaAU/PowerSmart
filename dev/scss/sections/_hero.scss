@@ -1,0 +1,159 @@
+.hero {
+  --hero-overlap: 20px;
+  padding: 116px 0 44px;
+  margin: 0 0 calc(var(--hero-overlap) * -1);
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    background: url(../images/bg/mark.svg) 0 / cover no-repeat;
+    aspect-ratio: 239/375;
+    width: 84.8vw;
+    max-width: 478px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform-origin: center;
+    transform: translate3d(-50%, 0, 0) rotate(45deg);
+  }
+
+  .container {
+    display: grid;
+    gap: 26px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__text {
+    h1 {
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 138%;
+      margin: 0 0 22px;
+    }
+  }
+
+  &__visual {
+    figure {
+      @include img-abs-container(66.8%);
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .icon-play {
+      width: 52px;
+      height: 52px;
+      border-radius: 100%;
+      background-color: $white;
+      @include abs-center;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 116px 0 60px;
+
+    &::before {
+      left: auto;
+      bottom: auto;
+      top: 0;
+      right: 0;
+      transform: none;
+      width: 25vw;
+    }
+
+    .container {
+      grid-template-columns: auto 50%;
+    }
+
+    &__visual {
+      figure {
+        min-height: 100%;
+      }
+    }
+
+    &__text {
+      padding: 20px 0;
+      align-self: center;
+
+      h1 {
+        max-width: 9em;
+      }
+
+      p {
+        max-width: 22.3em;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    --hero-overlap: 32px;
+    --hero-spacer: 7vh;
+    padding: calc(var(--hero-spacer) + 92px) 0 calc(var(--hero-spacer) + var(--hero-overlap));
+
+    .container {
+      grid-template-columns: auto 52.2%;
+      gap: 52px;
+    }
+
+    &__visual {
+      figure {
+        border-radius: 32px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    --hero-overlap: 52px;
+
+    &::before {
+      top: 34px;
+      right: 3.5vw;
+    }
+
+    .container {
+      gap: 84px;
+    }
+
+    &__visual {
+      figure {
+        padding-top: 66.6%;
+      }
+      .icon-play {
+        width: 84px;
+        height: 84px;
+      }
+    }
+
+    &__text {
+      h1 {
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 139%;
+        margin: 0 0 42px;
+      }
+    }
+
+    @media (max-height: 900px) {
+      --hero-spacer: 6vh;
+    }
+
+    @media (max-height: 800px) {
+      &__visual {
+        figure {
+          padding-top: 56%;
+        }
+      }
+    }
+  }
+}
