@@ -9,10 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-index",
-      "settings": {}
-    },
     "hero_FwkKej": {
       "type": "hero",
       "name": "Hero",
@@ -32,11 +28,26 @@
         "headline": "Safe and reliable batteries",
         "intro_body": "All PowerSmart<sup>TM</sup> batteries are tested for safety and reliability, designed specifically for your roller shutters and automated window coverings. Only use chargers that are supplied by the manufacturer, not third-party chargers."
       }
+    },
+    "battery_care_kkEPLn": {
+      "type": "battery-care",
+      "name": "Battery Care",
+      "settings": {
+        "section_id": "batteryCare",
+        "icon": "shopify://shop_images/battery.svg",
+        "heading": "Understanding your <span>battery’s</span> <span>lifespan</span>",
+        "text": "<p>Just like smoke alarm batteries, lithium batteries should be replaced regularly.</p>",
+        "button_label": "Get Replacement Batteries",
+        "button_link": "#buy-now",
+        "image_mobile": "shopify://shop_images/img02-sm.webp",
+        "image": "shopify://shop_images/img02.webp",
+        "image_large": "shopify://shop_images/img02-lg.webp"
+      }
     }
   },
   "order": [
-    "main",
     "hero_FwkKej",
-    "intro_rxqxGp"
+    "intro_rxqxGp",
+    "battery_care_kkEPLn"
   ]
 }
