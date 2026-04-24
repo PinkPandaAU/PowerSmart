@@ -1,5 +1,5 @@
 {%- if section.settings.icon != blank or section.settings.heading != blank or section.settings.text != blank or section.settings.button_label != blank or section.settings.image != blank or section.settings.image_mobile != blank or section.settings.image_large != blank -%}
-<section class="panel" id="{{ section.settings.section_id }}">
+<section class="panel {{ section.settings.section_classes }}" id="{{ section.settings.section_id }}">
     <div class="container">
         <div class="panel__wrapper">
             {%- if section.settings.icon != blank or section.settings.heading != blank or section.settings.text != blank or section.settings.button_label != blank -%}
@@ -73,14 +73,18 @@
 
 {% schema %}
 {
-  "name": "Battery Care",
+  "name": "Battery Care (Education)",
   "tag": "div",
   "settings": [
     {
         "type": "text",
         "id": "section_id",
-        "label": "Section ID",
-        "default": "batteryCare"
+        "label": "Section ID"
+    },
+    {
+        "type": "text",
+        "id": "section_classes",
+        "label": "Section Classes"
     },
     { "type": "image_picker", "id": "icon", "label": "Icon" },
     { "type": "textarea", "id": "heading", "label": "Heading", "default": "Understanding your <span>battery’s</span> <span>lifespan</span>" },
