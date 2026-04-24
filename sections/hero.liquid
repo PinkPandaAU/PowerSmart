@@ -1,0 +1,112 @@
+{%- if section.settings.heading_text != blank or section.settings.body_text != blank or section.settings.button_label !=
+blank or section.settings.modal_video_url != blank or section.settings.video_asset != blank -%}
+    <section class="hero" id="{{ section.settings.section_id }}">
+        <div class="container">
+            <div class="hero__text">
+                {%- if section.settings.heading_text != blank -%}
+                    <h1>{{ section.settings.heading_text }}</h1>
+                {%- endif -%}
+
+
+                {%- if section.settings.body_text != blank or section.settings.button_label != blank -%}
+                    <div class="fade-in-wrapper">
+                        {%- if section.settings.body_text != blank -%}
+                            <p>{{ section.settings.body_text }}</p>
+                        {%- endif -%}
+
+                        {%- if section.settings.button_label != blank -%}
+                            <a href="{{ section.settings.button_link }}" class="button button--primary-outlined"
+                                data-toggle="modal">
+                                <span class="button__wrapper">
+                                    <span class="button__circle">
+                                        <svg width="13" height="9">
+                                            <use xlink:href="images/sprite.svg#arr-white"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="button__text">
+                                        <span>{{ section.settings.button_label }}</span>
+                                        <span class="duplicate">{{ section.settings.button_label }}</span>
+                                    </span>
+                                    <span class="button__circle">
+                                        <svg width="13" height="9">
+                                            <use xlink:href="images/sprite.svg#arr-white"></use>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </a>
+                        {%- endif -%}
+                    </div>
+                {%- endif -%}
+            </div>
+
+            {%- if section.settings.modal_video_url != blank or section.settings.video_asset != blank -%}
+                <div class="hero__visual">
+                    <figure data-toggle="modal" data-target="#modalVideo" data-src="{{ section.settings.modal_video_url }}">
+                        {%- if section.settings.video_asset != blank -%}
+                        <video src="{{ section.settings.video_asset | asset_url }}" autoplay loop muted playsinline></video>
+                        {%- endif -%}
+                        <span class="icon-play">
+                            <svg width="13" height="14">
+                                <use xlink:href="images/sprite.svg#play"></use>
+                            </svg>
+                        </span>
+                    </figure>
+                </div>
+            {%- endif -%}
+        </div>
+    </section>
+{%- endif -%}
+
+{% schema %}
+{
+    "name": "Hero Banner",
+    "tag": "div",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID",
+            "default": "home"
+        },
+        {
+            "type": "textarea",
+            "id": "heading_text",
+            "label": "Heading",
+            "default": "It’s time to <span>replace</span> your roller shutter <span>battery</span>"
+        },
+        {
+            "type": "textarea",
+            "id": "body_text",
+            "label": "Body",
+            "default": "For safety and peace of mind, lithium batteries should be replaced every 3–4 years.."
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label",
+            "default": "Buy Now"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link",
+        },
+        {
+            "type": "url",
+            "id": "modal_video_url",
+            "label": "Modal video URL",
+        },
+        {
+            "type": "video",
+            "id": "video_asset",
+            "label": "Modal video"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero",
+            "category": "Banner"
+        }
+    ]
+}
+{% endschema %}
