@@ -34,6 +34,7 @@
       "name": "Battery Care",
       "settings": {
         "section_id": "batteryCare",
+        "section_classes": "",
         "icon": "shopify://shop_images/battery.svg",
         "heading": "Understanding your <span>battery’s</span> <span>lifespan</span>",
         "text": "<p>Just like smoke alarm batteries, lithium batteries should be replaced regularly.</p>",
@@ -43,11 +44,39 @@
         "image": "shopify://shop_images/img02.webp",
         "image_large": "shopify://shop_images/img02-lg.webp"
       }
+    },
+    "text_image_hhc34k": {
+      "type": "text-image",
+      "name": "Text Image",
+      "settings": {
+        "image": "shopify://shop_images/img03.webp",
+        "subtitle": "Battery Peace of Mind",
+        "heading": "Practice good lithium <span>battery</span> <span>care</span>",
+        "body": "Lithium batteries are safe and reliable when used correctly, but like all batteries, they naturally degrade over time. For peace of mind, we recommend replacing your PowerSmart<sup>TM</sup> roller shutter battery every 3 - 4 years. Replacing your battery keeps your shutters running smoothly and your home safe. Think of it like checking your smoke alarm battery - a simple step for safety and reassurance."
+      }
+    },
+    "battery_care_jc6jUN": {
+      "type": "battery-care",
+      "name": "Battery Care",
+      "settings": {
+        "section_id": "education",
+        "section_classes": "panel--last",
+        "icon": "shopify://shop_images/exclaim.svg",
+        "heading": "When to <span>stop</span> <span>using</span> your battery",
+        "text": "<p>For peace of mind, replace every 3-4 years, or immediately if you notice these signs.</p>",
+        "button_label": "Get Replacement Batteries",
+        "button_link": "#buy-now",
+        "image_mobile": "shopify://shop_images/img04-sm.webp",
+        "image": "shopify://shop_images/img04.webp",
+        "image_large": "shopify://shop_images/img04-lg.webp"
+      }
     }
   },
   "order": [
     "hero_FwkKej",
     "intro_rxqxGp",
-    "battery_care_kkEPLn"
+    "battery_care_kkEPLn",
+    "text_image_hhc34k",
+    "battery_care_jc6jUN"
   ]
 }
