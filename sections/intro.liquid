@@ -1,0 +1,45 @@
+{%- if section.settings.headline != blank or section.settings.intro_body != blank -%}
+  <div class="container container--sm">
+    <div class="intro__wrapper fade-in-wrapper">
+      {%- if section.settings.headline != blank -%}
+        <div class="intro__headline">
+          <h4>{{ section.settings.headline }}</h4>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.intro_body != blank -%}
+        <div class="intro__text">
+          <p>{{ section.settings.intro_body }}</p>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Intro",
+  "tag": "section",
+  "class": "intro",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Safe and reliable batteries"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_body",
+      "label": "Body",
+      "default": "All PowerSmart<sup>TM</sup> batteries are tested for safety and reliability, designed specifically for your roller shutters and automated window coverings. Only use chargers that are supplied by the manufacturer, not third-party chargers."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Intro",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
