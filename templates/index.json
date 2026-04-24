@@ -11,10 +11,7 @@
   "sections": {
     "main": {
       "type": "main-index",
-      "settings": {
-        "heading": "Welcome to PowerSmart",
-        "subheading": "Smart power solutions for every home and business."
-      }
+      "settings": {}
     },
     "hero_FwkKej": {
       "type": "hero",
@@ -27,10 +24,19 @@
         "button_link": "",
         "modal_video_url": ""
       }
+    },
+    "intro_rxqxGp": {
+      "type": "intro",
+      "name": "Intro",
+      "settings": {
+        "headline": "Safe and reliable batteries",
+        "intro_body": "All PowerSmart<sup>TM</sup> batteries are tested for safety and reliability, designed specifically for your roller shutters and automated window coverings. Only use chargers that are supplied by the manufacturer, not third-party chargers."
+      }
     }
   },
   "order": [
     "main",
-    "hero_FwkKej"
+    "hero_FwkKej",
+    "intro_rxqxGp"
   ]
 }
