@@ -27,19 +27,19 @@
             })('UHWo2lassVDRyRiqp61F')
         </script>-->
 
+        {{content_for_header}}
         {{ 'styles-start.css' | asset_url | stylesheet_tag }}
         {{ 'styles.css' | asset_url | stylesheet_tag }}
     </head>
 
     <body>
         <div class="global-wrapper" >
-            {{content_for_header}}
+            {% section 'header' %}
             
             <main class="content">
                 {{ content_for_layout }}
             </main>
 
-            {{ content_for_footer }}
         </div>
 
         <div id="modalVideo" class="modal">
