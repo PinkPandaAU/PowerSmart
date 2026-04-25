@@ -1,0 +1,66 @@
+<section class="block-account">
+    <div class="container fade-in-wrapper">
+        <div class="account-wrapper">
+            <h1>{{ section.settings.title }}</h1>
+            
+            <div class="account-content">
+                <div class="account-info">
+                    <div class="account-header">
+                        <h2>{{ 'customer.account.details' | t }}</h2>
+                        <a href="/account/edit" class="link">{{ section.settings.edit_link_text }}</a>
+                    </div>
+                    
+                    {% if customer %}
+                        <p><strong>{{ 'customer.account.name' | t }}:</strong> {{ customer.first_name }} {{ customer.last_name }}</p>
+                        <p><strong>{{ 'customer.account.email' | t }}:</strong> {{ customer.email }}</p>
+                        
+                        {% if customer.phone %}
+                            <p><strong>{{ 'customer.account.phone' | t }}:</strong> {{ customer.phone }}</p>
+                        {% endif %}
+                        
+                        <p><strong>{{ 'customer.account.joined' | t }}:</strong> {{ customer.created_at | date: format: 'date' }}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="account-orders">
+                    <div class="orders-header">
+                        <h2>{{ 'customer.account.recent_orders' | t }}</h2>
+                    </div>
+                    
+                    {% if customer.orders %}
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>{{ 'customer.account.order_number' | t }}</th>
+                                    <th>{{ 'customer.account.order_date' | t }}</th>
+                                    <th>{{ 'customer.account.order_status' | t }}</th>
+                                    <th>{{ 'customer.account.order_total' | t }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in customer.orders limit: 5 %}
+                                    <tr>
+                                        <td>
+                                            <a href="{{ order.customer_url }}" class="link">{{ order.name }}</a>
+                                        </td>
+                                        <td>{{ order.created_at | date: format: 'date' }}</td>
+                                        <td>{{ order.financial_status_label }}</td>
+                                        <td>{{ order.total_price | money }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        
+                        <a href="/account/orders" class="link">{{ section.settings.view_all_orders_text }}</a>
+                    {% else %}
+                        <p>{{ 'customer.account.no_orders' | t }}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="account-logout">
+                    <a href="/account/logout" class="button button--primary-outlined">{{ section.settings.logout_button_text }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

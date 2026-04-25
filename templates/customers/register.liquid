@@ -1,0 +1,36 @@
+<section class="block-register">
+    <div class="container fade-in-wrapper">
+        <div class="register-wrapper">
+            <h1>{{ section.settings.title }}</h1>
+            <p>{{ section.settings.description }}</p>
+            
+            <form method="post" action="/account" class="register-form">
+                <div class="form-group">
+                    <label for="firstName">{{ 'customer.register.first_name' | t }}</label>
+                    <input type="text" name="customer[first_name]" id="firstName" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">{{ 'customer.register.last_name' | t }}</label>
+                    <input type="text" name="customer[last_name]" id="lastName" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">{{ 'customer.register.email' | t }}</label>
+                    <input type="email" name="customer[email]" id="email" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">{{ 'customer.register.password' | t }}</label>
+                    <input type="password" name="customer[password]" id="password" class="form-control" required>
+                </div>
+                
+                <button type="submit" class="button button--primary">{{ section.settings.button_text }}</button>
+            </form>
+            
+            <div class="register-links">
+                <a href="/account/login">{{ section.settings.login_link_text }}</a>
+            </div>
+        </div>
+    </div>
+</section>
