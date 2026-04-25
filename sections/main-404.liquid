@@ -1,0 +1,57 @@
+<section class="block-404">
+    <div class="container fade-in-wrapper">
+        <h1>{{ section.settings.title }}</h1>
+        <p>{{ section.settings.body }}</p>
+        <a href="{{ section.settings.button_url }}" class="button button--primary-outlined">
+            <span class="button__wrapper">
+                <span class="button__circle">
+                    <svg width="13" height="9"><use xlink:href="images/sprite.svg#arr-white"></use></svg>
+                </span>
+                <span class="button__text">
+                    <span>{{ section.settings.button_text }}</span>
+                    <span class="duplicate">{{ section.settings.button_text }}</span>
+                </span>
+                <span class="button__circle">
+                    <svg width="13" height="9"><use xlink:href="images/sprite.svg#arr-white"></use></svg>
+                </span>
+            </span>
+        </a>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "404 Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "404 page not found"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Return to Home"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "404 Page"
+    }
+  ]
+}
+{% endschema %}
