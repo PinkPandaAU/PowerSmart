@@ -1,0 +1,58 @@
+<section class="hero-subpage">
+    <div class="container">
+        <h1>Shop</h1>
+
+        <nav class="fade-in" aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><span>Shop</span></li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<section class="shop">
+	<div class="container">
+		<div class="products__grid">
+
+            {%- for product in collection.products -%}
+                {% include 'product-card', product: product %}
+            {%- endfor -%}
+        
+            {%- if collection.products_count == 0 -%}
+                <div>
+                    <p class="text-center">No products found in this collection.</p>
+                </div>
+            {%- endif -%}
+		</div>
+        
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+            <div class="text-center fade-in">
+                {% render 'button-primary-outline',
+                    link: section.settings.button_link,
+                    label: section.settings.button_label,
+                    ext_class: "in-view"
+                %}
+            </div>
+        {%- endif -%}
+	</div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Back to Home"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ]
+}
+{% endschema %}

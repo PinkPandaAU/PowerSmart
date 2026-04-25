@@ -1,7 +1,8 @@
 {% assign btn_link = link %}
 {% assign btn_label = label %}
+{% assign ext_class = ext_class %}
 
-<a href="{{ btn_link }}" class="button button--primary-outlined"
+<a href="{{ btn_link }}" class="button button--primary-outlined {{ ext_class }}"
     {% if btn_link contains '#' and btn_link != '#' %}
         data-toggle="modal"
     {% endif %}
