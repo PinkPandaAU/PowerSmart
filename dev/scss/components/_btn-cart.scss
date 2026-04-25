@@ -10,12 +10,14 @@
   &[disabled] {
     pointer-events: none;
 
-    .btn-cart__loader {
-      opacity: 1;
-    }
+    &:not(.sold-out) {
+      .btn-cart__loader {
+        opacity: 1;
+      }
 
-    .button__wrapper {
-      opacity: 0;
+      .button__wrapper {
+        opacity: 0;
+      }
     }
   }
 

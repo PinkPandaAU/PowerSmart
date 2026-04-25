@@ -1,0 +1,108 @@
+{%- if section.settings.subtitle != blank or section.settings.heading_text != blank or section.settings.offer_title != blank or section.settings.offer_description != blank or section.blocks.size > 0 -%}
+	<div class="container">
+		<div class="products__wrapper">
+			{%- if section.settings.subtitle != blank or section.settings.heading_text != blank or section.settings.offer_title != blank or section.settings.offer_description != blank -%}
+				<div class="products__col fade-in-wrapper">
+					{%- if section.settings.subtitle != blank -%}
+						<div class="subtitle">{{ section.settings.subtitle }}</div>
+					{%- endif -%}
+					
+					{%- if section.settings.heading_text != blank -%}
+						<h2>{{ section.settings.heading_text }}</h2>
+					{%- endif -%}
+					
+					{%- if section.settings.offer_title != blank or section.settings.offer_description != blank -%}
+						<div class="cp-offer">
+							{%- if section.settings.offer_title != blank -%}
+								<div class="cp-offer__title">
+									<svg width="24" height="24"><use xlink:href="{{ 'sprite.svg' | asset_url }}#badge"></use></svg>
+									{{ section.settings.offer_title }}
+								</div>
+							{%- endif -%}
+							
+							{%- if section.settings.offer_description != blank -%}
+								<p>{{ section.settings.offer_description }}</p>
+							{%- endif -%}
+						</div>
+					{%- endif -%}
+				</div>
+			{%- endif -%}
+
+			{%- assign has_selected_products = false -%}
+			{%- for block in section.blocks -%}
+				{%- if block.settings.product != blank -%}
+					{%- assign has_selected_products = true -%}
+				{%- endif -%}
+			{%- endfor -%}
+			
+			<div class="products__col">
+				<div class="products__grid">
+					{%- if has_selected_products -%}
+						{%- for block in section.blocks -%}
+							{%- assign selected_product = block.settings.product -%}
+							{%- if selected_product != blank -%}
+								{% include 'product-card', product: selected_product, show_sizes: false %}
+							{%- endif -%}
+						{%- endfor -%}
+					{% elsif has_selected_products == false -%}
+						{% for product in collections.all.products limit: 2 %}
+							{% include 'product-card', product: product, show_sizes: false %}
+						{%- endfor -%}
+					{%- endif -%}
+				</div>
+			</div>
+		</div>
+	</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Products",
+  "tag": "section",
+  "class": "products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Buy replacement batteries"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "Get your <span>replacement</span> <span>batteries</span>"
+    },
+    {
+      "type": "text",
+      "id": "offer_title",
+      "label": "Offer Title",
+      "default": "Limited time special offer"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_description",
+      "label": "Offer Description",
+      "default": "Use the unique code provided by your retailer at checkout for an exclusive discount."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products"
+    }
+  ]
+}
+{% endschema %}

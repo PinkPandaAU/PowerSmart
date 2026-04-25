@@ -1,0 +1,87 @@
+<div class="products__item fade-in">
+    {%- if product.featured_image -%}
+        <figure class="products__item-img">
+            <a href="{{ product.url }}">
+                <img
+                src="{{ product.featured_image | image_url: width: 500 }}"
+                alt="{{ product.featured_image.alt }}"
+                loading="lazy"
+                />
+            </a>
+        </figure>
+    {%- endif -%}
+  
+    {%- if product.title or product.price -%}
+        <div class="products__item-info">
+        {%- if product.title -%}
+            <h5>
+                <a href="{{ product.url }}">{{ product.title }}</a>
+            </h5>
+        {%- endif -%}
+        
+        {%- if product.price -%}
+            <div class="products__item-price">{{ product.price | money }}</div>
+        {%- endif -%}
+        </div>
+    {%- endif -%}
+  
+    <div class="products__item-button">
+        <form method="post" action="/cart/add" id="product_form_{{ product.id }}" accept-charset="UTF-8" class="" enctype="multipart/form-data" novalidate="novalidate">
+            <input type="hidden" name="form_type" value="product">
+            <input type="hidden" name="utf8" value="✓">
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+            <button type="submit" class="button button--primary btn-cart {% if product.available == false %}sold-out{% endif %}" data-product-id="{{ product.id }}" {% if product.available == false %}disabled{% endif %} >
+                <span class="button__wrapper">
+                    {% if product.available %}
+                        <span class="button__circle">
+                            <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-navy"></use></svg>
+                        </span>
+                        <span class="button__text">
+                            <span>Add to Cart</span>
+                            <span class="duplicate">Add to Cart</span>
+                        </span>
+                        <span class="button__circle">
+                            <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-blue"></use></svg>
+                        </span>
+                    {% else %}
+                        <span class="button__text">
+                            <span>Sold Out</span>
+                            <span class="duplicate">Sold Out</span>
+                        </span>
+                    {% endif %}
+                </span>
+                <span class="btn-cart__loader">
+                    <svg width="60" height="60" viewBox="0 0 38 38">
+                        <g transform="translate(19 19)">
+                            <g transform="rotate(0)">
+                                <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.125"><animate attributeName="opacity" from="0.125" to="0.125" dur="1.2s" begin="0s" repeatCount="indefinite" keyTimes="0;1" values="1;0.125"></animate></circle>
+                            </g>
+                            <g transform="rotate(45)">
+                                <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.25"><animate attributeName="opacity" from="0.25" to="0.25" dur="1.2s" begin="0.15s" repeatCount="indefinite" keyTimes="0;1" values="1;0.25"></animate></circle>
+                            </g>
+                            <g transform="rotate(90)">
+                                <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.375"><animate attributeName="opacity" from="0.375" to="0.375" dur="1.2s" begin="0.3s" repeatCount="indefinite" keyTimes="0;1" values="1;0.375"></animate></circle>
+                            </g>
+                            <g transform="rotate(135)">
+                                <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.5"><animate attributeName="opacity" from="0.5" to="0.5" dur="1.2s" begin="0.45s" repeatCount="indefinite" keyTimes="0;1" values="1;0.5"></animate></circle>
+                            </g>
+                            <g transform="rotate(180)">
+                                <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.625"><animate attributeName="opacity" from="0.625" to="0.625" dur="1.2s" begin="0.6s" repeatCount="indefinite" keyTimes="0;1" values="1;0.625"></animate></circle>
+                            </g>
+                            <g transform="rotate(225)">
+                                <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.75"><animate attributeName="opacity" from="0.75" to="0.75" dur="1.2s" begin="0.75s" repeatCount="indefinite" keyTimes="0;1" values="1;0.75"></animate></circle>
+                            </g>
+                            <g transform="rotate(270)">
+                                <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.875"><animate attributeName="opacity" from="0.875" to="0.875" dur="1.2s" begin="0.9s" repeatCount="indefinite" keyTimes="0;1" values="1;0.875"></animate></circle>
+                            </g>
+                            <g transform="rotate(315)">
+                                <circle cx="0" cy="12" r="3" fill="#fff" opacity="1"><animate attributeName="opacity" from="1" to="1" dur="1.2s" begin="1.05s" repeatCount="indefinite" keyTimes="0;1" values="1;1"></animate></circle>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+            </button>
+        </form>
+    </div>
+</div>
