@@ -1,14 +1,19 @@
 <div class="products__item fade-in">
-    {%- if product.featured_image -%}
-        <figure class="products__item-img">
-            <a href="{{ product.url }}">
-                <img
-                    src="{{ product.featured_image | image_url }}"
-                    alt="{{ product.featured_image.alt }}"
-                />
-            </a>
-        </figure>
-    {%- endif -%}
+    <figure class="products__item-img">
+        <a href="{{ product.url }}">
+        {%- if product.metafields.custom.featured_image != blank -%}
+            <img
+                src="{{ product.metafields.custom.featured_image | image_url }}"
+                alt="{{ product.metafields.custom.featured_image.alt }}"
+            />
+        {%- elsif product.featured_image -%}
+            <img
+                src="{{ product.featured_image | image_url }}"
+                alt="{{ product.featured_image.alt }}"
+            />
+        {%- endif -%}
+        </a>
+    </figure>
   
     {%- if product.title or product.price -%}
         <div class="products__item-info">
