@@ -110,11 +110,11 @@
                                         <div class="products__grid">
                                             {%- if settings.buy_now_modal_product != blank -%}
                                                 {%- for product in settings.buy_now_modal_product -%}
-                                                    {% include 'product-card', product: product, show_sizes: false %}
+                                                    {% include 'product-card', product: product %}
                                                 {%- endfor -%}
                                             {% else -%}
                                                 {% for product in collections.all.products limit: 2 %}
-                                                    {% include 'product-card', product: product, show_sizes: false %}
+                                                    {% include 'product-card', product: product %}
                                                 {%- endfor -%}
                                             {%- endif -%}
                                         </div>
