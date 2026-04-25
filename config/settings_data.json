@@ -93,7 +93,7 @@
           "footer_email": "info@powersmart.com.au",
           "secondary_logo": "shopify://shop_images/cw-logo.svg",
           "secondary_logo_link": "http://cwproducts.com.au/",
-          "company_description": "PowerSmart is a CW Products brand Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "company_description": "PowerSmart<sup>TM</sup> is a CW Products brand Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
           "primary_link_text": "Battery Care",
           "primary_link_url": "#batteryCare",
           "secondary_link_text": "Education",
