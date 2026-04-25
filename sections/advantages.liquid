@@ -6,6 +6,10 @@
             </h3>
         {%- endif -%}
 
+        {%- if section.settings.body_text != blank -%}
+             <p>{{ section.settings.body_text }}</p>
+        {%- endif -%}
+
         {%- if section.blocks.size > 0 -%}
             <div class="advantages__wrapper">
                 {%- for block in section.blocks -%}
@@ -41,6 +45,11 @@
       "id": "heading_text",
       "label": "Heading",
       "default": "<span class=\"no-split\">PowerSmart<sup>TM</sup> </span> batteries for <span>safety</span> <span>and</span> <span>reliability</span>"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body",
     }
   ],
   "blocks": [
