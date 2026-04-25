@@ -25,6 +25,42 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "bottom_menu_item_PYzrD4": {
+            "type": "bottom_menu_item",
+            "settings": {
+              "menu_title": "Privacy Policy",
+              "menu_link": "shopify://policies/privacy-policy"
+            }
+          },
+          "bottom_menu_item_d68FLM": {
+            "type": "bottom_menu_item",
+            "settings": {
+              "menu_title": "Terms & Condtions",
+              "menu_link": "#"
+            }
+          },
+          "bottom_menu_item_BNyJkX": {
+            "type": "bottom_menu_item",
+            "settings": {
+              "menu_title": "Shipping & Delivery",
+              "menu_link": "#"
+            }
+          },
+          "bottom_menu_item_3f9rP8": {
+            "type": "bottom_menu_item",
+            "settings": {
+              "menu_title": "Returns Policy",
+              "menu_link": "#"
+            }
+          }
+        },
+        "block_order": [
+          "bottom_menu_item_PYzrD4",
+          "bottom_menu_item_d68FLM",
+          "bottom_menu_item_BNyJkX",
+          "bottom_menu_item_3f9rP8"
+        ],
         "settings": {
           "footer_email": "info@powersmart.com.au",
           "secondary_logo": "shopify://shop_images/cw-logo.svg",
