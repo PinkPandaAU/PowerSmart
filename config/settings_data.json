@@ -14,6 +14,10 @@
     "color_text": "#121212",
     "type_body_font": "assistant_n4",
     "type_header_font": "assistant_n7",
+    "buy_now_modal_product": [
+      "replacement-lithium-battery-1x-battery",
+      "bundle-pack-replacement-lithium-batteries-3x-batteries"
+    ],
     "sections": {
       "header": {
         "type": "header",
