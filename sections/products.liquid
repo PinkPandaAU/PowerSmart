@@ -1,4 +1,4 @@
-{%- if section.settings.subtitle != blank or section.settings.heading_text != blank or section.settings.offer_title != blank or section.settings.offer_description != blank or section.blocks.size > 0 -%}
+{%- if section.settings.subtitle != blank or section.settings.heading_text != blank or section.settings.offer_title != blank or section.settings.offer_description != blank or settings.buy_now_modal_product != blank -%}
 	<div class="container">
 		<div class="products__wrapper">
 			{%- if section.settings.subtitle != blank or section.settings.heading_text != blank or section.settings.offer_title != blank or section.settings.offer_description != blank -%}
@@ -28,23 +28,13 @@
 				</div>
 			{%- endif -%}
 
-			{%- assign has_selected_products = false -%}
-			{%- for block in section.blocks -%}
-				{%- if block.settings.product != blank -%}
-					{%- assign has_selected_products = true -%}
-				{%- endif -%}
-			{%- endfor -%}
-			
 			<div class="products__col">
 				<div class="products__grid">
-					{%- if has_selected_products -%}
-						{%- for block in section.blocks -%}
-							{%- assign selected_product = block.settings.product -%}
-							{%- if selected_product != blank -%}
-								{% include 'product-card', product: selected_product, show_sizes: false %}
-							{%- endif -%}
+					{%- if section.settings.buy_now_product != blank -%}
+						{%- for product in section.settings.buy_now_product -%}
+							{% include 'product-card', product: product, show_sizes: false %}
 						{%- endfor -%}
-					{% elsif has_selected_products == false -%}
+					{% else -%}
 						{% for product in collections.all.products limit: 2 %}
 							{% include 'product-card', product: product, show_sizes: false %}
 						{%- endfor -%}
@@ -84,19 +74,11 @@
       "id": "offer_description",
       "label": "Offer Description",
       "default": "Use the unique code provided by your retailer at checkout for an exclusive discount."
-    }
-  ],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Select Product"
-        }
-      ]
+    },
+	{
+        "type": "product_list",
+        "id": "buy_now_product",
+        "label": "Select Products"
     }
   ],
   "presets": [
