@@ -5,14 +5,14 @@
         <a href="{{ section.settings.button_url }}" class="button button--primary-outlined">
             <span class="button__wrapper">
                 <span class="button__circle">
-                    <svg width="13" height="9"><use xlink:href="images/sprite.svg#arr-white"></use></svg>
+                    <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-white"></use></svg>
                 </span>
                 <span class="button__text">
                     <span>{{ section.settings.button_text }}</span>
                     <span class="duplicate">{{ section.settings.button_text }}</span>
                 </span>
                 <span class="button__circle">
-                    <svg width="13" height="9"><use xlink:href="images/sprite.svg#arr-white"></use></svg>
+                    <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-white"></use></svg>
                 </span>
             </span>
         </a>
