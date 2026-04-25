@@ -96,3 +96,12 @@ a {
 .text-center {
   text-align: center;
 }
+
+.shopify-policy__container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  .shopify-policy__title {
+    display: none;
+  }
+}
