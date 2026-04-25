@@ -12,9 +12,54 @@
     "main": {
       "type": "main-product",
       "settings": {}
+    },
+    "advantages_cED9RV": {
+      "type": "advantages",
+      "blocks": {
+        "advantage_item_mV8tkb": {
+          "type": "advantage_item",
+          "settings": {
+            "item_headline": "Safety First",
+            "item_text": "Proactively replacing your battery every 3–4 years helps reduce performance decline and potential safety risks."
+          }
+        },
+        "advantage_item_MCfjba": {
+          "type": "advantage_item",
+          "settings": {
+            "item_headline": "Perfect Fit",
+            "item_text": "Designed specifically for CW Products roller shutters for reliable and consistent operation."
+          }
+        },
+        "advantage_item_WnPr4N": {
+          "type": "advantage_item",
+          "settings": {
+            "item_headline": "Manufacturer Tested",
+            "item_text": "Every battery is tested for safety, quality, and long-term reliability."
+          }
+        },
+        "advantage_item_D6hFMn": {
+          "type": "advantage_item",
+          "settings": {
+            "item_headline": "Easy to Replace",
+            "item_text": "Order online, receive delivery, replace your battery, and recycle the old one with confidence."
+          }
+        }
+      },
+      "block_order": [
+        "advantage_item_mV8tkb",
+        "advantage_item_MCfjba",
+        "advantage_item_WnPr4N",
+        "advantage_item_D6hFMn"
+      ],
+      "name": "Advantages",
+      "settings": {
+        "heading_text": "<span class=\"no-split\">PowerSmart<sup>TM</sup> </span> batteries for <span>safety</span> <span>and</span> <span>reliability</span>",
+        "body_text": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "advantages_cED9RV"
   ]
 }
