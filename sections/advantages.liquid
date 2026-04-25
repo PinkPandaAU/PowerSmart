@@ -1,0 +1,107 @@
+{%- if section.settings.heading_text != blank or section.blocks.size > 0 -%}
+    <div class="container container--sm">
+        {%- if section.settings.heading_text != blank -%}
+            <h3>
+                {{ section.settings.heading_text }}
+            </h3>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+            <div class="advantages__wrapper">
+                {%- for block in section.blocks -%}
+                    {%- if block.settings.item_headline != blank or block.settings.item_text != blank or block.settings.item_image != blank -%}
+                        <div class="advantages__item fade-in-wrapper">
+                            {%- if block.settings.item_image != blank -%}
+                                <figure>{{ block.settings.item_image | image_url: width: 100 | image_tag }}</figure>
+                            {%- endif -%}
+
+                            {%- if block.settings.item_headline != blank -%}
+                                <h4>{{ block.settings.item_headline }}</h4>
+                            {%- endif -%}
+
+                            {%- if block.settings.item_text != blank -%}
+                                <p>{{ block.settings.item_text }}</p>
+                            {%- endif -%}
+                        </div>
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+        {%- endif -%}
+    </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Advantages",
+  "tag": "section",
+  "class": "advantages",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "<span class=\"no-split\">PowerSmart<sup>TM</sup> </span> batteries for <span>safety</span> <span>and</span> <span>reliability</span>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "advantage_item",
+      "name": "Advantage Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "item_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "item_headline",
+          "label": "Headline",
+          "default": "Safety First"
+        },
+        {
+          "type": "textarea",
+          "id": "item_text",
+          "label": "Body",
+          "default": "Proactively replacing your battery every 3–4 years helps reduce performance decline and potential safety risks."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Advantages",
+      "blocks": [
+        {
+          "type": "advantage_item",
+          "settings": {
+            "item_headline": "Safety First",
+            "item_text": "Proactively replacing your battery every 3–4 years helps reduce performance decline and potential safety risks."
+          }
+        },
+        {
+          "type": "advantage_item",
+          "settings": {
+            "item_headline": "Perfect Fit",
+            "item_text": "Designed specifically for CW Products roller shutters for reliable and consistent operation."
+          }
+        },
+        {
+          "type": "advantage_item",
+          "settings": {
+            "item_headline": "Manufacturer Tested",
+            "item_text": "Every battery is tested for safety, quality, and long-term reliability."
+          }
+        },
+        {
+          "type": "advantage_item",
+          "settings": {
+            "item_headline": "Easy to Replace",
+            "item_text": "Order online, receive delivery, replace your battery, and recycle the old one with confidence."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
