@@ -19,6 +19,7 @@
         "advantage_item_mV8tkb": {
           "type": "advantage_item",
           "settings": {
+            "item_image": "shopify://shop_images/safety.svg",
             "item_headline": "Safety First",
             "item_text": "Proactively replacing your battery every 3–4 years helps reduce performance decline and potential safety risks."
           }
@@ -26,6 +27,7 @@
         "advantage_item_MCfjba": {
           "type": "advantage_item",
           "settings": {
+            "item_image": "shopify://shop_images/lightening.svg",
             "item_headline": "Perfect Fit",
             "item_text": "Designed specifically for CW Products roller shutters for reliable and consistent operation."
           }
@@ -33,6 +35,7 @@
         "advantage_item_WnPr4N": {
           "type": "advantage_item",
           "settings": {
+            "item_image": "shopify://shop_images/battery_174d7203-73b9-41dd-8cfe-151d55af24f7.svg",
             "item_headline": "Manufacturer Tested",
             "item_text": "Every battery is tested for safety, quality, and long-term reliability."
           }
@@ -40,6 +43,7 @@
         "advantage_item_D6hFMn": {
           "type": "advantage_item",
           "settings": {
+            "item_image": "shopify://shop_images/watch.svg",
             "item_headline": "Easy to Replace",
             "item_text": "Order online, receive delivery, replace your battery, and recycle the old one with confidence."
           }
