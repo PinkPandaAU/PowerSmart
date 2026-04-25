@@ -12,9 +12,9 @@
     "main": {
       "type": "main-404",
       "settings": {
-        "title": "Page Not Found",
-        "body": "The page you are looking for doesn't exist or has been moved.",
-        "button_text": "Return to Home",
+        "title": "404 page not found",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "button_text": "RETURN TO HOME",
         "button_url": "/"
       }
     }
