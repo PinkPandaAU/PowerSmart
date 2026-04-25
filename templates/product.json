@@ -11,9 +11,7 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "settings": {
-        "enable_dynamic_buttons": true
-      }
+      "settings": {}
     }
   },
   "order": [

@@ -115,7 +115,8 @@
       ],
       "name": "Advantages",
       "settings": {
-        "heading_text": "<span class=\"no-split\">PowerSmart<sup>TM</sup> </span> batteries for <span>safety</span> <span>and</span> <span>reliability</span>"
+        "heading_text": "<span class=\"no-split\">PowerSmart<sup>TM</sup> </span> batteries for <span>safety</span> <span>and</span> <span>reliability</span>",
+        "body_text": ""
       }
     },
     "faqs_eQDkVD": {
@@ -211,6 +212,16 @@
         "button_label": "Get Replacement Batteries",
         "button_link": "#buy-now"
       }
+    },
+    "products_Lcweww": {
+      "type": "products",
+      "name": "Products",
+      "settings": {
+        "subtitle": "Buy replacement batteries",
+        "heading_text": "Get your <span>replacement</span> <span>batteries</span>",
+        "offer_title": "Limited time special offer",
+        "offer_description": "Use the unique code provided by your retailer at checkout for an exclusive discount."
+      }
     }
   },
   "order": [
@@ -220,6 +231,7 @@
     "text_image_hhc34k",
     "battery_care_jc6jUN",
     "advantages_FQEfyb",
+    "products_Lcweww",
     "faqs_eQDkVD"
   ]
 }
