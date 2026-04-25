@@ -62,5 +62,40 @@
         "default": "assistant_n7"
       }
     ]
+  },
+  {
+    "name": "Buy now model",
+    "settings": [
+      {
+        "type": "text",
+        "id": "buy_now_modal_subtitle",
+        "label": "Subtitle",
+        "default": "Buy replacement batteries"
+      },
+      {
+        "type": "textarea",
+        "id": "buy_now_modal_heading_text",
+        "label": "Heading",
+        "default": "Get your <span>replacement</span> <span>batteries</span>"
+      },
+      {
+        "type": "text",
+        "id": "buy_now_modal_offer_title",
+        "label": "Offer Title",
+        "default": "Limited time special offer"
+      },
+      {
+        "type": "textarea",
+        "id": "buy_now_modal_offer_description",
+        "label": "Offer Description",
+        "default": "Use the unique code provided by your retailer at checkout for an exclusive discount."
+      },
+      {
+        "type": "product_list",
+        "id": "buy_now_modal_product",
+        "label": "Select Products",
+        "limit": 2
+      }
+    ]
   }
 ]

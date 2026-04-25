@@ -60,148 +60,69 @@
             </div>
         </div>
         </div>
-        <div id="buy-now" class="modal">
-        <div class="modal__backdrop"></div>
 
-        <div class="modal__wrapper">
-            <div class="modal__content">
-            <button data-modal-close class="modal__close" aria-label="Close">
-                <svg width="12" height="12"><use xlink:href="{{ 'sprite.svg' | asset_url }}#close"></use></svg>
-            </button>
-            <div class="modal__body">
-                <div class="products">
-                <div class="products__wrapper">
-                    <div class="products__col fade-in-wrapper">
-                    <div class="subtitle">Buy replacement batteries</div>
-                    <h3>Get your <span>replacement</span> <span>batteries</span></h3>
-                    <div class="cp-offer">
-                        <div class="cp-offer__title">
-                        <svg width="24" height="24"><use xlink:href="{{ 'sprite.svg' | asset_url }}#badge"></use></svg>
-                        Limited time special offer
+        {% comment %} BUY NOW MODAL {% endcomment %}
+        {%- if settings.buy_now_modal_subtitle != blank or settings.buy_now_modal_heading_text != blank or settings.buy_now_modal_offer_title != blank or settings.buy_now_modal_offer_description != blank or settings.buy_now_modal_product != blank -%}
+            <div id="buy-now" class="modal">
+                <div class="modal__backdrop"></div>
+                <div class="modal__wrapper">
+                    <div class="modal__content">
+                        <button data-modal-close class="modal__close" aria-label="Close">
+                            <svg width="12" height="12"><use xlink:href="{{ 'sprite.svg' | asset_url }}#close"></use></svg>
+                        </button>
+
+                        <div class="modal__body">
+                            <div class="products">
+                                <div class="products__wrapper">
+
+                                    {%- if settings.buy_now_modal_subtitle != blank or settings.buy_now_modal_heading_text != blank or settings.buy_now_modal_offer_title != blank or settings.buy_now_modal_offer_description != blank -%}
+                                        <div class="products__col fade-in-wrapper">
+                                            {%- if settings.buy_now_modal_subtitle != blank -%}
+                                                <div class="subtitle">{{ settings.buy_now_modal_subtitle }}</div>
+                                            {%- endif -%}
+                                            
+                                            {%- if settings.buy_now_modal_heading_text != blank -%}
+                                                <h3>{{ settings.buy_now_modal_heading_text }}</h3>
+                                            {%- endif -%}
+
+                                            {%- if settings.buy_now_modal_offer_title != blank or settings.buy_now_modal_offer_description != blank -%}
+                                                <div class="cp-offer">
+                                                    {%- if settings.buy_now_modal_offer_title != blank -%}
+                                                        <div class="cp-offer__title">
+                                                            <svg width="24" height="24"><use xlink:href="{{ 'sprite.svg' | asset_url }}#badge"></use></svg>
+                                                            {{ settings.buy_now_modal_offer_title }}
+                                                        </div>
+                                                    {%- endif -%}
+                                                    
+                                                    {%- if settings.buy_now_modal_offer_description != blank -%}
+                                                        <p>{{ settings.buy_now_modal_offer_description }}</p>
+                                                    {%- endif -%}
+                                                </div>
+                                            {%- endif -%}
+                                        </div>
+                                    {%- endif -%}
+
+                                    <div class="products__col">
+                                        <div class="products__grid">
+                                            {%- if settings.buy_now_modal_product != blank -%}
+                                                {%- for product in settings.buy_now_modal_product -%}
+                                                    {% include 'product-card', product: product, show_sizes: false %}
+                                                {%- endfor -%}
+                                            {% else -%}
+                                                {% for product in collections.all.products limit: 2 %}
+                                                    {% include 'product-card', product: product, show_sizes: false %}
+                                                {%- endfor -%}
+                                            {%- endif -%}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>Use the unique code provided by your retailer at checkout for an exclusive discount.</p>
-                    </div>
-                    </div>
-                    <div class="products__col">
-                    <div class="products__grid">
-                        <div class="products__item fade-in">
-                        <figure class="products__item-img">
-                            <a href="#"><img src="images/img05.webp" alt="image" /></a>
-                        </figure>
-                        <div class="products__item-info">
-                            <h5><a href="#">Replacement lithium battery (1x battery)</a></h5>
-                            <div class="products__item-price">$49.95</div>
-                        </div>
-                        <div class="products__item-button">
-                            <button class="button button--primary btn-cart">
-                            <span class="button__wrapper">
-                                <span class="button__circle">
-                                <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-navy"></use></svg>
-                                </span>
-                                <span class="button__text">
-                                <span>Add to Cart</span>
-                                <span class="duplicate">Add to Cart</span>
-                                </span>
-                                <span class="button__circle">
-                                <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-blue"></use></svg>
-                                </span>
-                            </span>
-                            <span class="btn-cart__loader">
-                                <svg width="60" height="60" viewBox="0 0 38 38">
-                                <g transform="translate(19 19)">
-                                    <g transform="rotate(0)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.125"><animate attributeName="opacity" from="0.125" to="0.125" dur="1.2s" begin="0s" repeatCount="indefinite" keyTimes="0;1" values="1;0.125"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(45)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.25"><animate attributeName="opacity" from="0.25" to="0.25" dur="1.2s" begin="0.15s" repeatCount="indefinite" keyTimes="0;1" values="1;0.25"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(90)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.375"><animate attributeName="opacity" from="0.375" to="0.375" dur="1.2s" begin="0.3s" repeatCount="indefinite" keyTimes="0;1" values="1;0.375"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(135)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.5"><animate attributeName="opacity" from="0.5" to="0.5" dur="1.2s" begin="0.44999999999999996s" repeatCount="indefinite" keyTimes="0;1" values="1;0.5"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(180)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.625"><animate attributeName="opacity" from="0.625" to="0.625" dur="1.2s" begin="0.6s" repeatCount="indefinite" keyTimes="0;1" values="1;0.625"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(225)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.75"><animate attributeName="opacity" from="0.75" to="0.75" dur="1.2s" begin="0.75s" repeatCount="indefinite" keyTimes="0;1" values="1;0.75"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(270)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.875"><animate attributeName="opacity" from="0.875" to="0.875" dur="1.2s" begin="0.8999999999999999s" repeatCount="indefinite" keyTimes="0;1" values="1;0.875"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(315)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="1"><animate attributeName="opacity" from="1" to="1" dur="1.2s" begin="1.05s" repeatCount="indefinite" keyTimes="0;1" values="1;1"></animate></circle>
-                                    </g>
-                                </g>
-                                </svg>
-                            </span>
-                            </button>
-                        </div>
-                        </div>
-                        <div class="products__item fade-in">
-                        <figure class="products__item-img">
-                            <a href="#"><img src="images/img06.webp" alt="image" /></a>
-                        </figure>
-                        <div class="products__item-info">
-                            <h5><a href="#">Bundle pack: Replacement lithium batteries (3x batteries)</a></h5>
-                            <div class="products__item-price">$79.95</div>
-                        </div>
-                        <div class="products__item-button">
-                            <button class="button button--primary btn-cart">
-                            <span class="button__wrapper">
-                                <span class="button__circle">
-                                <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-navy"></use></svg>
-                                </span>
-                                <span class="button__text">
-                                <span>Add to Cart</span>
-                                <span class="duplicate">Add to Cart</span>
-                                </span>
-                                <span class="button__circle">
-                                <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-blue"></use></svg>
-                                </span>
-                            </span>
-                            <span class="btn-cart__loader">
-                                <svg width="60" height="60" viewBox="0 0 38 38">
-                                <g transform="translate(19 19)">
-                                    <g transform="rotate(0)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.125"><animate attributeName="opacity" from="0.125" to="0.125" dur="1.2s" begin="0s" repeatCount="indefinite" keyTimes="0;1" values="1;0.125"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(45)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.25"><animate attributeName="opacity" from="0.25" to="0.25" dur="1.2s" begin="0.15s" repeatCount="indefinite" keyTimes="0;1" values="1;0.25"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(90)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.375"><animate attributeName="opacity" from="0.375" to="0.375" dur="1.2s" begin="0.3s" repeatCount="indefinite" keyTimes="0;1" values="1;0.375"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(135)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.5"><animate attributeName="opacity" from="0.5" to="0.5" dur="1.2s" begin="0.44999999999999996s" repeatCount="indefinite" keyTimes="0;1" values="1;0.5"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(180)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.625"><animate attributeName="opacity" from="0.625" to="0.625" dur="1.2s" begin="0.6s" repeatCount="indefinite" keyTimes="0;1" values="1;0.625"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(225)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.75"><animate attributeName="opacity" from="0.75" to="0.75" dur="1.2s" begin="0.75s" repeatCount="indefinite" keyTimes="0;1" values="1;0.75"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(270)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="0.875"><animate attributeName="opacity" from="0.875" to="0.875" dur="1.2s" begin="0.8999999999999999s" repeatCount="indefinite" keyTimes="0;1" values="1;0.875"></animate></circle>
-                                    </g>
-                                    <g transform="rotate(315)">
-                                    <circle cx="0" cy="12" r="3" fill="#fff" opacity="1"><animate attributeName="opacity" from="1" to="1" dur="1.2s" begin="1.05s" repeatCount="indefinite" keyTimes="0;1" values="1;1"></animate></circle>
-                                    </g>
-                                </g>
-                                </svg>
-                            </span>
-                            </button>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
-                </div>
             </div>
-            </div>
-        </div>
-        </div>
+        {%- endif -%}
+
         <div id="modalCart" class="modal cart-modal">
         <div class="modal__backdrop"></div>
 
