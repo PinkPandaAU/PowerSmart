@@ -15,6 +15,7 @@
   p {
     max-width: 35em;
     margin: 0 auto 32px;
+    color: $dark-blue;
   }
 
   @include media-breakpoint-up(lg) {

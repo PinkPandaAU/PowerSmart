@@ -26,11 +26,15 @@
 
   h1 {
     justify-content: center;
-    margin: 0 0 42px;
 
     .single-word {
       padding: 0 0.1em 0.1em;
     }
+  }
+
+  .breadcrumb,
+  .account-user {
+    margin: 42px 0 0;
   }
 
   a {
@@ -49,7 +53,7 @@
       content: "";
       right: 0;
       top: 50%;
-      transform: translate3d(0, -50%, 0) rotate(-30deg);
+      transform: translate3d(0, -46%, 0) rotate(-210deg);
     }
   }
 
@@ -58,7 +62,11 @@
     padding: 180px 0 68px;
 
     &::before {
-      transform: translate3d(0, 0, 0) rotate(-150deg);
+      transform: translate3d(4%, 19%, 0) rotate(-150deg);
+    }
+
+    h1 {
+      margin: 0 0 42px;
     }
   }
 
@@ -67,15 +75,24 @@
     padding: 228px 0 94px;
 
     &::before {
+      width: 318px;
+      height: 500px;
       left: 11.875%;
     }
 
     &::after {
+      width: 318px;
+      height: 500px;
       right: 5.9%;
     }
 
     h1 {
       margin: 0 0 68px;
+    }
+
+    .breadcrumb,
+    .account-user {
+      margin: 68px 0 0;
     }
   }
 }

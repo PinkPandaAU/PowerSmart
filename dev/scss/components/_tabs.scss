@@ -1,0 +1,53 @@
+.tabs {
+  .tabs-menu {
+    display: flex;
+    margin: 0 0 42px;
+
+    .button {
+      --btn-bg: #{$white};
+      --btn-border: #{$gray-400};
+      --btn-color: #{$dark-blue};
+      --btn-bg-hover: #{$dark-blue};
+      --btn-border-hover: #{$dark-blue};
+      --btn-color-hover: #{$white};
+      height: 42px;
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 0 18px;
+      margin: 0 10px 0 0;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      &__wrapper {
+        margin: 0;
+        padding: 0;
+      }
+
+      &:hover {
+        .button__wrapper {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      &.active {
+        --btn-bg: #{$blue};
+        --btn-border: #{$blue};
+        --btn-color: #{$white};
+        pointer-events: none;
+      }
+    }
+  }
+
+  .tabs-content {
+    .tab-content {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

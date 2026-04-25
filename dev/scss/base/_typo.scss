@@ -42,10 +42,6 @@ h1,
   font-family: $ff-alt-black;
   font-size: clamp($h1-font-size-sm, get-vw($h1-font-size), $h1-font-size);
   line-height: 1.14;
-
-  span {
-    color: $blue;
-  }
 }
 
 h2,
@@ -53,10 +49,6 @@ h2,
   font-family: $ff-alt-black;
   font-size: clamp($h2-font-size-sm, get-vw($h2-font-size), $h2-font-size);
   line-height: 1.25;
-
-  span {
-    color: $blue;
-  }
 
   @include media-breakpoint-up(lg) {
     line-height: 1.12;
@@ -68,9 +60,24 @@ h3,
   font-family: $ff-alt-black;
   font-size: clamp($h3-font-size-sm, get-vw($h3-font-size), $h3-font-size);
   line-height: 1.34;
+}
 
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
   span {
     color: $blue;
+
+    &.no-split {
+      color: inherit;
+    }
+  }
+
+  sup {
+    font-size: 0.6em;
   }
 }
 
