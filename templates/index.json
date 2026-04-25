@@ -117,6 +117,100 @@
       "settings": {
         "heading_text": "<span class=\"no-split\">PowerSmart<sup>TM</sup> </span> batteries for <span>safety</span> <span>and</span> <span>reliability</span>"
       }
+    },
+    "faqs_eQDkVD": {
+      "type": "faqs",
+      "blocks": {
+        "faq_item_RJnVgA": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why should I replace my roller shutter battery?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_p9UqyR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is there a problem with my current battery?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_ELGaPB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I care for my battery to make it last longer?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_FCPVTy": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I dispose of my old battery?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_mFtzEn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this a recall?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_LQ7JN9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if my battery is less than three years old?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_Nwqx7U": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Should I be using a third-party charger?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_VqfChQ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What are the warning signs of a battery that needs replacement?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_d6QUB7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who do I contact if I have questions?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        "faq_item_LKphPR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How often should I replace my roller shutter battery?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_RJnVgA",
+        "faq_item_p9UqyR",
+        "faq_item_ELGaPB",
+        "faq_item_FCPVTy",
+        "faq_item_mFtzEn",
+        "faq_item_LQ7JN9",
+        "faq_item_Nwqx7U",
+        "faq_item_VqfChQ",
+        "faq_item_d6QUB7",
+        "faq_item_LKphPR"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "subtitle": "FAQs",
+        "heading_text": "Frequently asked <span>questions</span>",
+        "button_label": "Get Replacement Batteries",
+        "button_link": "#buy-now"
+      }
     }
   },
   "order": [
@@ -125,6 +219,7 @@
     "battery_care_kkEPLn",
     "text_image_hhc34k",
     "battery_care_jc6jUN",
-    "advantages_FQEfyb"
+    "advantages_FQEfyb",
+    "faqs_eQDkVD"
   ]
 }
