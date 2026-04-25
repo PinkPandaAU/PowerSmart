@@ -11,20 +11,10 @@
                 {%- endif -%}
 
                 {%- if section.settings.button_label != blank -%}
-                    <a data-toggle="modal" href="{{ section.settings.button_link }}" class="button button--primary-outlined">
-                        <span class="button__wrapper">
-                            <span class="button__circle">
-                                <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-white"></use></svg>
-                            </span>
-                            <span class="button__text">
-                                <span>{{ section.settings.button_label }}</span>
-                                <span class="duplicate">{{ section.settings.button_label }}</span>
-                            </span>
-                            <span class="button__circle">
-                                <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-white"></use></svg>
-                            </span>
-                        </span>
-                    </a>
+                  {% render 'button-primary-outline',
+                      link: section.settings.button_link,
+                      label: section.settings.button_label
+                  %}
                 {%- endif -%}
             </div>
         {%- endif -%}

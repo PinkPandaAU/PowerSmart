@@ -1,0 +1,22 @@
+{% assign btn_link = link %}
+{% assign btn_label = label %}
+
+<a href="{{ btn_link }}" class="button button--primary-outlined"
+    data-toggle="modal">
+    <span class="button__wrapper">
+        <span class="button__circle">
+            <svg width="13" height="9">
+                <use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-white"></use>
+            </svg>
+        </span>
+        <span class="button__text">
+            <span>{{ btn_label }}</span>
+            <span class="duplicate">{{ btn_label }}</span>
+        </span>
+        <span class="button__circle">
+            <svg width="13" height="9">
+                <use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-white"></use>
+            </svg>
+        </span>
+    </span>
+</a>
