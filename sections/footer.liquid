@@ -24,7 +24,7 @@
                     </figure>
                 {% endif %}
                 {% if section.settings.company_description != blank %}
-                    <p>{{ section.settings.company_description }}</p>
+                    {{ section.settings.company_description }}
                 {% endif %}
             </div>
         {% endif %}
@@ -69,15 +69,14 @@
             </ul>
         </div>
     </div>
-    {% if section.blocks.size > 0 %}
-        <div class="footer__bottom">
-            <ul>
-                {% for block in section.blocks %}
-                    <li><a href="{{ block.settings.menu_link }}">{{ block.settings.menu_title }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
+    <div class="footer__bottom">
+        <ul>
+            {% for block in section.blocks %}
+                <li><a href="{{ block.settings.menu_link }}">{{ block.settings.menu_title }}</a></li>
+            {% endfor %}
+            <li>&copy; {{ 'now' | date: '%Y' }} PowerSmart<sup>TM</sup> Control Systems</li>
+        </ul>
+    </div>
 </div>
 
 
@@ -103,7 +102,7 @@
             "label": "Secondary Logo Link"
         },
         {
-            "type": "textarea",
+            "type": "richtext",
             "id": "company_description",
             "label": "Company Description"
         },
