@@ -3,9 +3,8 @@
         <figure class="products__item-img">
             <a href="{{ product.url }}">
                 <img
-                src="{{ product.featured_image | image_url: width: 500 }}"
-                alt="{{ product.featured_image.alt }}"
-                loading="lazy"
+                    src="{{ product.featured_image | image_url }}"
+                    alt="{{ product.featured_image.alt }}"
                 />
             </a>
         </figure>
