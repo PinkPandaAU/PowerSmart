@@ -1,0 +1,202 @@
+{%- if section.settings.subtitle != blank or section.settings.heading_text != blank or section.settings.button_label != blank or section.blocks.size > 0 -%}
+    <div class="container container--sm">
+        {%- if section.settings.subtitle != blank or section.settings.heading_text != blank or section.settings.button_label != blank -%}
+            <div class="faqs__header fade-in-wrapper">
+                {%- if section.settings.subtitle != blank -%}
+                    <div class="subtitle">{{ section.settings.subtitle }}</div>
+                {%- endif -%}
+
+                {%- if section.settings.heading_text != blank -%}
+                    <h2>{{ section.settings.heading_text }}</h2>
+                {%- endif -%}
+
+                {%- if section.settings.button_label != blank -%}
+                    <a data-toggle="modal" href="{{ section.settings.button_link }}" class="button button--primary-outlined">
+                        <span class="button__wrapper">
+                            <span class="button__circle">
+                                <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-white"></use></svg>
+                            </span>
+                            <span class="button__text">
+                                <span>{{ section.settings.button_label }}</span>
+                                <span class="duplicate">{{ section.settings.button_label }}</span>
+                            </span>
+                            <span class="button__circle">
+                                <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-white"></use></svg>
+                            </span>
+                        </span>
+                    </a>
+                {%- endif -%}
+            </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+            {%- assign total_items = section.blocks.size -%}
+            {%- assign half_items = total_items | divided_by: 2 | ceil -%}
+            <div class="accordion fade-in-wrapper">
+                <div class="accordion__col">
+                    {%- for block in section.blocks -%}
+                        {%- if forloop.index0 <= half_items -%}
+                            {%- if block.settings.question != blank and block.settings.answer != blank -%}
+                                <div class="accordion__item">
+                                    <button type="button" class="accordion__item-button">{{ block.settings.question }}</button>
+                                    <div class="accordion__item-body">
+                                        <div class="accordion__item-inner">
+                                            <p>{{ block.settings.answer }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {%- endif -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+
+            <div class="accordion__col">
+                {%- for block in section.blocks -%}
+                    {%- if forloop.index0 > half_items -%}
+                        {%- if block.settings.question != blank and block.settings.answer != blank -%}
+                            <div class="accordion__item">
+                                <button type="button" class="accordion__item-button">{{ block.settings.question }}</button>
+                                <div class="accordion__item-body">
+                                    <div class="accordion__item-inner">
+                                        <p>{{ block.settings.answer }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+            </div>
+        {%- endif -%}
+    </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQs",
+  "tag": "section",
+  "class": "faqs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "FAQs"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "Frequently asked <span>questions</span>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Get Replacement Batteries"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Why should I replace my roller shutter battery?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why should I replace my roller shutter battery?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is there a problem with my current battery?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I care for my battery to make it last longer?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I dispose of my old battery?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this a recall?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if my battery is less than three years old?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Should I be using a third-party charger?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What are the warning signs of a battery that needs replacement?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who do I contact if I have questions?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How often should I replace my roller shutter battery?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
