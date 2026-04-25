@@ -11,10 +11,62 @@
   "sections": {
     "main": {
       "type": "main-collection",
-      "settings": {}
+      "settings": {
+        "button_label": "Back to Home",
+        "button_link": "/"
+      }
+    },
+    "advantages_figb9q": {
+      "type": "advantages",
+      "blocks": {
+        "advantage_item_3733rw": {
+          "type": "advantage_item",
+          "settings": {
+            "item_image": "shopify://shop_images/safety.svg",
+            "item_headline": "Safety First",
+            "item_text": "Proactively replacing your battery every 3–4 years helps reduce performance decline and potential safety risks."
+          }
+        },
+        "advantage_item_GKzatP": {
+          "type": "advantage_item",
+          "settings": {
+            "item_image": "shopify://shop_images/lightening.svg",
+            "item_headline": "Perfect Fit",
+            "item_text": "Designed specifically for CW Products roller shutters for reliable and consistent operation."
+          }
+        },
+        "advantage_item_Cpgeg3": {
+          "type": "advantage_item",
+          "settings": {
+            "item_image": "shopify://shop_images/battery_174d7203-73b9-41dd-8cfe-151d55af24f7.svg",
+            "item_headline": "Manufacturer Tested",
+            "item_text": "Every battery is tested for safety, quality, and long-term reliability."
+          }
+        },
+        "advantage_item_4KHjpG": {
+          "type": "advantage_item",
+          "settings": {
+            "item_image": "shopify://shop_images/watch.svg",
+            "item_headline": "Easy to Replace",
+            "item_text": "Order online, receive delivery, replace your battery, and recycle the old one with confidence."
+          }
+        }
+      },
+      "block_order": [
+        "advantage_item_3733rw",
+        "advantage_item_GKzatP",
+        "advantage_item_Cpgeg3",
+        "advantage_item_4KHjpG"
+      ],
+      "name": "Advantages",
+      "settings": {
+        "heading_text": "<span>Safe</span> <span>and</span> <span>reliable</span> batteries",
+        "body_text": "All CW Products batteries are tested for safety and reliability, designed specifically for your roller shutters and automated window coverings. Only use chargers that are supplied by the manufacturer - not third-party chargers."
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "advantages_figb9q"
   ]
 }
