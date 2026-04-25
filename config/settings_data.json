@@ -1,10 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "color_primary": "#0a6cff",
     "color_background": "#ffffff",
     "color_text": "#121212",
     "type_body_font": "assistant_n4",
-    "type_header_font": "assistant_n7"
+    "type_header_font": "assistant_n7",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "topbar_text": "",
+          "topbar_modal_button_text": "",
+          "button_text": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_email": "info@powersmart.com.au",
+          "secondary_logo": "shopify://shop_images/cw-logo.svg",
+          "secondary_logo_link": "http://cwproducts.com.au/",
+          "company_description": "PowerSmart is a CW Products brand Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "primary_link_text": "Battery Care",
+          "primary_link_url": "#batteryCare",
+          "secondary_link_text": "Education",
+          "secondary_link_url": "#education"
+        }
+      }
+    },
+    "content_for_index": []
   },
   "presets": {
     "Default": {
