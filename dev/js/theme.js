@@ -184,9 +184,20 @@ CustomEase.create("elastic-css", ".2, 1.33, .25 ,1");
 
 function initSplitText() {
   document.querySelectorAll("h1, h2, h3").forEach((heading) => {
+    const map = [];
+    heading.querySelectorAll(".no-split").forEach((el, i) => {
+      const key = `__NOSPLIT_${i}__`;
+      map.push({ key, el });
+      el.outerHTML = key;
+    });
+
     const split = new SplitText(heading, {
       type: "words",
       wordsClass: "single-word",
+    });
+
+    map.forEach(({ key, el }) => {
+      heading.innerHTML = heading.innerHTML.replace(key, el.outerHTML);
     });
 
     heading.querySelectorAll(".single-word").forEach((el) => {
@@ -451,3 +462,18 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("input", checkChanges);
   });
 });
+
+if (document.querySelector(".tabs")) {
+  const tabLinks = document.querySelectorAll(".tab-link");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabLinks.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      tabLinks.forEach((btn) => btn.classList.remove("active"));
+      tabContents.forEach((content) => content.classList.remove("active"));
+
+      this.classList.add("active");
+      document.getElementById(this.dataset.tab).classList.add("active");
+    });
+  });
+}
