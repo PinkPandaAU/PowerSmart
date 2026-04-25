@@ -28,8 +28,12 @@
         </script>-->
 
         {{content_for_header}}
-        {{ 'styles-start.css' | asset_url | stylesheet_tag }}
-        {{ 'styles.css' | asset_url | stylesheet_tag }}
+        {% if template == 'index' %}
+            {{ 'styles-start.css' | asset_url | stylesheet_tag }}
+            {{ 'style.css' | asset_url | stylesheet_tag }}
+        {% else %}
+            {{ 'style.css' | asset_url | stylesheet_tag }}
+        {% endif %}
     </head>
 
     <body>
