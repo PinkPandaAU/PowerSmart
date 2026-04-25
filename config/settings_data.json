@@ -17,10 +17,38 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "menu_item_tz4XX7": {
+            "type": "menu_item",
+            "settings": {
+              "menu_title": "Home",
+              "menu_link": "/"
+            }
+          },
+          "menu_item_4tPmpU": {
+            "type": "menu_item",
+            "settings": {
+              "menu_title": "Battery Care",
+              "menu_link": "#batteryCare"
+            }
+          },
+          "menu_item_xKDknm": {
+            "type": "menu_item",
+            "settings": {
+              "menu_title": "Education",
+              "menu_link": "#education"
+            }
+          }
+        },
+        "block_order": [
+          "menu_item_tz4XX7",
+          "menu_item_4tPmpU",
+          "menu_item_xKDknm"
+        ],
         "settings": {
-          "topbar_text": "",
-          "topbar_modal_button_text": "",
-          "button_text": ""
+          "topbar_text": "Safe and reliable.",
+          "topbar_modal_button_text": "Get your replacement batteries",
+          "button_text": "Buy Now"
         }
       },
       "footer": {
