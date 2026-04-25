@@ -1,0 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "title": "Page Not Found",
+        "body": "The page you are looking for doesn't exist or has been moved.",
+        "button_text": "Return to Home",
+        "button_url": "/"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
