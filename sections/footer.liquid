@@ -24,7 +24,7 @@
                     </figure>
                 {% endif %}
                 {% if section.settings.company_description != blank %}
-                    {{ section.settings.company_description }}
+                    {{ section.settings.company_description | raw }}
                 {% endif %}
             </div>
         {% endif %}
@@ -102,7 +102,7 @@
             "label": "Secondary Logo Link"
         },
         {
-            "type": "richtext",
+            "type": "textarea",
             "id": "company_description",
             "label": "Company Description"
         },
