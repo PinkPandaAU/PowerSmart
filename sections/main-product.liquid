@@ -13,6 +13,8 @@
                         {% endfor %}
                     </div>
                 </div>
+
+                {% if product.media.size > 1 %}
                 <div class="swiper-controls">
                     <div class="swiper-button-prev link-circle">
                         <div class="link-circle__content">
@@ -43,6 +45,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
             </div>
         {% endif %}
         <div class="product-details__main">
