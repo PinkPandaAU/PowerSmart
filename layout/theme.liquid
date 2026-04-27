@@ -127,87 +127,100 @@
             </div>
         {%- endif -%}
 
+        {% comment %} ADD TO CART MODAL {% endcomment %}
         <div id="modalCart" class="modal cart-modal">
-        <div class="modal__backdrop"></div>
+            <div class="modal__backdrop"></div>
 
-        <button data-modal-close class="modal__close" aria-label="Close">
-            <svg width="12" height="12"><use xlink:href="{{ 'sprite.svg' | asset_url }}#close"></use></svg>
-        </button>
+            <button data-modal-close class="modal__close" aria-label="Close">
+                <svg width="12" height="12"><use xlink:href="{{ 'sprite.svg' | asset_url }}#close"></use></svg>
+            </button>
 
-        <div class="modal__wrapper">
-            <div class="modal__content">
-            <h3>Your <span>cart</span></h3>
+            <div class="modal__wrapper">
+                <div class="modal__content">
 
-            <div class="cart-item">
-                <figure>
-                <img src="images/cart1.webp" alt="image" />
-                </figure>
-                <div class="cart-item-details">
-                <div class="cart-item-title">Replacement lithium battery (1x battery)</div>
-                <div class="product-details__number">
-                    <div class="product-number">
-                    <button type="button" class="product-number-less">
-                        <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.75 0.75H8.75" stroke="#002341" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <input type="text" class="product-number-input" value="1" />
-                    <button type="button" class="product-number-more">
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.75 0.75V8.75" stroke="#002341" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M0.75 4.75H8.75" stroke="#002341" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
+                    {%- if settings.cart_modal_title != blank -%}
+                        <h3>{{ settings.cart_modal_title }}</h3>
+                    {%- endif -%}
+
+                    {% comment %} Empty cart content {% endcomment %}
+                    {%- if settings.cart_modal_empty_cart_message != blank or settings.cart_modal_shop_btn_text != blank  -%}
+                        <div class="cart-empty">
+                            <h4 class="cart-empty__message">{{ settings.cart_modal_empty_cart_message }}</h4>
+
+                            <a href="{{ routes.all_products_collection_url }}" class="button button--primary">
+                                <span class="button__wrapper">
+                                    <span class="button__circle">
+                                        <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-navy"></use></svg>
+                                    </span>
+                                    <span class="button__text">
+                                        <span>{{ settings.cart_modal_shop_btn_text }}</span>
+                                        <span class="duplicate">{{ settings.cart_modal_shop_btn_text }}</span>
+                                    </span>
+                                    <span class="button__circle">
+                                        <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-blue"></use></svg>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                    {%- endif -%}
+
+                    <!-- Container for all cart items -->
+                    <div class="cart-items-container">
+                        <div class="cart-item__loader-container">
+                            <span class="cart-item__loader">
+                                <svg width="60" height="60" viewBox="0 0 38 38">
+                                    <g transform="translate(19 19)">
+                                        <g transform="rotate(0)">
+                                            <circle cx="0" cy="12" r="3" fill="#00aeef" opacity="0.125"><animate attributeName="opacity" from="0.125" to="0.125" dur="1.2s" begin="0s" repeatCount="indefinite" keyTimes="0;1" values="1;0.125"></animate></circle>
+                                        </g>
+                                        <g transform="rotate(45)">
+                                            <circle cx="0" cy="12" r="3" fill="#00aeef" opacity="0.25"><animate attributeName="opacity" from="0.25" to="0.25" dur="1.2s" begin="0.15s" repeatCount="indefinite" keyTimes="0;1" values="1;0.25"></animate></circle>
+                                        </g>
+                                        <g transform="rotate(90)">
+                                            <circle cx="0" cy="12" r="3" fill="#00aeef" opacity="0.375"><animate attributeName="opacity" from="0.375" to="0.375" dur="1.2s" begin="0.3s" repeatCount="indefinite" keyTimes="0;1" values="1;0.375"></animate></circle>
+                                        </g>
+                                        <g transform="rotate(135)">
+                                            <circle cx="0" cy="12" r="3" fill="#00aeef" opacity="0.5"><animate attributeName="opacity" from="0.5" to="0.5" dur="1.2s" begin="0.45s" repeatCount="indefinite" keyTimes="0;1" values="1;0.5"></animate></circle>
+                                        </g>
+                                        <g transform="rotate(180)">
+                                            <circle cx="0" cy="12" r="3" fill="#00aeef" opacity="0.625"><animate attributeName="opacity" from="0.625" to="0.625" dur="1.2s" begin="0.6s" repeatCount="indefinite" keyTimes="0;1" values="1;0.625"></animate></circle>
+                                        </g>
+                                        <g transform="rotate(225)">
+                                            <circle cx="0" cy="12" r="3" fill="#00aeef" opacity="0.75"><animate attributeName="opacity" from="0.75" to="0.75" dur="1.2s" begin="0.75s" repeatCount="indefinite" keyTimes="0;1" values="1;0.75"></animate></circle>
+                                        </g>
+                                        <g transform="rotate(270)">
+                                            <circle cx="0" cy="12" r="3" fill="#00aeef" opacity="0.875"><animate attributeName="opacity" from="0.875" to="0.875" dur="1.2s" begin="0.9s" repeatCount="indefinite" keyTimes="0;1" values="1;0.875"></animate></circle>
+                                        </g>
+                                        <g transform="rotate(315)">
+                                            <circle cx="0" cy="12" r="3" fill="#00aeef" opacity="1"><animate attributeName="opacity" from="1" to="1" dur="1.2s" begin="1.05s" repeatCount="indefinite" keyTimes="0;1" values="1;1"></animate></circle>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+                        <!-- Items will be loaded here by JavaScript -->
                     </div>
-                    <div class="product-details__price">$49.95</div>
-                </div>
+
+                    <div class="cart-total"><strong>Subtotal:</strong> $0.00</div>
+
+                    {%- if settings.cart_modal_btn_title != blank -%}
+                        <a href="{{ routes.checkout_url }}" class="button button--primary btn--checkout">
+                            <span class="button__wrapper">
+                                <span class="button__circle">
+                                    <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-navy"></use></svg>
+                                </span>
+                                <span class="button__text">
+                                    <span>{{ settings.cart_modal_btn_title }}</span>
+                                    <span class="duplicate">{{ settings.cart_modal_btn_title }}</span>
+                                </span>
+                                <span class="button__circle">
+                                    <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-blue"></use></svg>
+                                </span>
+                            </span>
+                        </a>
+                    {%- endif -%}
                 </div>
             </div>
-
-            <div class="cart-item">
-                <figure>
-                <img src="images/cart2.webp" alt="image" />
-                </figure>
-                <div class="cart-item-details">
-                <div class="cart-item-title">Bundle pack: Replacement lithium batteries (3x batteries)</div>
-                <div class="product-details__number">
-                    <div class="product-number">
-                    <button type="button" class="product-number-less">
-                        <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.75 0.75H8.75" stroke="#002341" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <input type="text" class="product-number-input" value="1" />
-                    <button type="button" class="product-number-more">
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.75 0.75V8.75" stroke="#002341" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M0.75 4.75H8.75" stroke="#002341" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    </div>
-                    <div class="product-details__price">$79.95</div>
-                </div>
-                </div>
-            </div>
-
-            <div class="cart-total"><strong>Subtotal:</strong> $129.90</div>
-
-            <a href="#" class="button button--primary">
-                <span class="button__wrapper">
-                <span class="button__circle">
-                    <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-navy"></use></svg>
-                </span>
-                <span class="button__text">
-                    <span>Checkout</span>
-                    <span class="duplicate">Checkout</span>
-                </span>
-                <span class="button__circle">
-                    <svg width="13" height="9"><use xlink:href="{{ 'sprite.svg' | asset_url }}#arr-blue"></use></svg>
-                </span>
-                </span>
-            </a>
-            </div>
-        </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
