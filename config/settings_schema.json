@@ -97,5 +97,34 @@
         "limit": 2
       }
     ]
+  },
+  {
+    "name": "Cart model",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "cart_modal_title",
+        "label": "Heading",
+        "default": "Your <span>cart</span>"
+      },
+      {
+        "type": "text",
+        "id": "cart_modal_empty_cart_message",
+        "label": "Empty cart message",
+        "default": "Your cart is empty."
+      },
+      {
+        "type": "text",
+        "id": "cart_modal_shop_btn_text",
+        "label": "Shop Button Text",
+        "default": "Continue shopping"
+      },
+      {
+        "type": "text",
+        "id": "cart_modal_btn_title",
+        "label": "Checkout Button Text",
+        "default": "Checkout"
+      }
+    ]
   }
 ]
