@@ -154,14 +154,54 @@
                         </span>
                     </button>
 
-                    <button type="button" class="button button--shoppay">
-                        <span class="button__wrapper">
-                            <span class="button__text">
-                                <span>Buy with <img src="../assets/shoppay.svg" alt="image"></span>
-                                <span class="duplicate">Buy with <img src="../assets/shoppay.svg" alt="image"></span>
+                    {% if section.settings.enable_dynamic_buttons and product.selected_or_first_available_variant.available %}
+                        <button type="button" class="button button--shoppay">
+                            <span class="button__wrapper">
+                                <span class="button__text">
+                                    <span>Buy with <img src="{{ 'shoppay.svg' | asset_url }}" alt="image"></span>
+                                    <span class="duplicate">Buy with <img src="{{ 'shoppay.svg' | asset_url }}" alt="image"></span>
+                                </span>
                             </span>
-                        </span>
-                    </button>
+
+                             <!-- ✅ REAL SHOPIFY PAYMENT BUTTON (INVISIBLE OVERLAY) -->
+                            {% form 'product', product %}
+                                <div class="shopify-payment-button shoppay-overlay">
+                                    {{ form | payment_button }}
+                                </div>
+                            {% endform %}
+                        </button>
+
+                        <style>
+                            /* Hide extra payment options */
+                            .shopify-payment-button__more-options {
+                                display: none !important;
+                            }
+
+                            /* Wrapper */
+                            .custom-shoppay-wrapper {
+                                position: relative;
+                                width: 100%;
+                            }
+
+                            /* Your custom UI should not block clicks */
+                            .custom-shoppay-ui {
+                                pointer-events: none;
+                            }
+
+                            /* Overlay real Shop Pay button */
+                            .shoppay-overlay {
+                                position: absolute;
+                                inset: 0;
+                                opacity: 0;
+                                z-index: 10;
+                            }
+
+                            .shoppay-overlay button {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        </style>
+                    {% endif %}
                 </div>
             </form>
 
@@ -340,7 +380,15 @@
     "name": "Main Product",
     "class": "product-details",
     "tag": "section",
-    "settings": [],
+    "settings": [
+        {
+        "type": "checkbox",
+        "id": "enable_dynamic_buttons",
+        "label": "Enable dynamic checkout buttons",
+        "info": "Show Shop Pay checkout options",
+        "default": true
+        }
+    ],
     "presets": [
         {
             "name": "Main Product"
