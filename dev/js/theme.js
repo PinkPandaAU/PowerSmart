@@ -640,7 +640,6 @@ document.addEventListener("click", (e) => {
     const lineNumber = input.dataset.line;
     
     input.value = parseInt(input.value || 1, 10) + 1;
-    showLoader(btnPlus);
     debouncedUpdateQuantity(lineNumber, parseInt(input.value, 10), btnPlus);
   }
 
@@ -653,13 +652,11 @@ document.addEventListener("click", (e) => {
     
     // If quantity is 1, remove the item from cart
     if (current <= 1) {
-      showLoader(btnMinus);
       debouncedUpdateQuantity(lineNumber, 0, btnMinus);
       return;
     }
     
     input.value = current - 1;
-    showLoader(btnMinus);
     debouncedUpdateQuantity(lineNumber, parseInt(input.value, 10), btnMinus);
   }
 });
@@ -683,6 +680,8 @@ document.addEventListener("input", (e) => {
 
 // Update cart item quantity via Shopify API
 function updateCartItemQuantity(lineNumber, newQuantity, element) {
+  showLoader(element);
+  
   fetch('/cart/change.js', {
     method: 'POST',
     headers: {
