@@ -410,19 +410,11 @@ if (document.querySelector(".btn-cart")) {
 // ============================================
 function showLoader(btn) {
   btn.classList.add('is-loading');
-  const loader = btn.querySelector('.btn-cart__loader');
-  if (loader) {
-    loader.style.display = 'flex';
-  }
 }
 
 function resetButton(btn) {
   btn.disabled = false;
   btn.classList.remove('is-loading');
-  const loader = btn.querySelector('.btn-cart__loader');
-  if (loader) {
-    loader.style.display = 'none';
-  }
 }
 
 // Update cart number in header
@@ -433,7 +425,7 @@ function updateHeaderCartNumber() {
       const cartNumber = document.querySelector('.header__cart-number');
       if (cartNumber) {
         cartNumber.textContent = cart.item_count;
-        cartNumber.style.display = cart.item_count > 0 ? 'inline' : 'none';
+        // cartNumber.style.display = cart.item_count > 0 ? 'inline' : 'none';
       }
     })
     .catch(error => {
@@ -648,6 +640,7 @@ document.addEventListener("click", (e) => {
     const lineNumber = input.dataset.line;
     
     input.value = parseInt(input.value || 1, 10) + 1;
+    showLoader(btnPlus);
     debouncedUpdateQuantity(lineNumber, parseInt(input.value, 10), btnPlus);
   }
 
@@ -658,12 +651,15 @@ document.addEventListener("click", (e) => {
     
     const current = parseInt(input.value || 1, 10);
     
-    // Check if quantity is 1, don't allow minus
+    // If quantity is 1, remove the item from cart
     if (current <= 1) {
+      showLoader(btnMinus);
+      debouncedUpdateQuantity(lineNumber, 0, btnMinus);
       return;
     }
     
     input.value = current - 1;
+    showLoader(btnMinus);
     debouncedUpdateQuantity(lineNumber, parseInt(input.value, 10), btnMinus);
   }
 });
@@ -702,11 +698,48 @@ function updateCartItemQuantity(lineNumber, newQuantity, element) {
     return response.json();
   })
   .then(cart => {
+    // Reset button state
+    resetButton(element);
+    
     updateHeaderCartNumber();
     updateCartTotal(cart.items);
-    updateItemPricesInModal(cart.items);
+    
+    // If quantity was set to 0, remove the item from DOM
+    if (newQuantity === 0) {
+      const cartItem = element.closest('.cart-item');
+      if (cartItem) {
+        cartItem.remove();
+        
+        // Check if cart is empty and show empty cart message
+        const cartItemsContainer = document.querySelector('.cart-items-container');
+        
+        if (cartItemsContainer && cartItemsContainer.children.length === 0) {
+          const modal = document.querySelector('.cart-modal');
+          
+          if (modal) {
+            const emptyCart = modal.querySelector('.cart-empty');
+            const cartTotal = modal.querySelector('.cart-total');
+            const checkoutBtn = modal.querySelector('.btn--checkout');
+            
+            if (emptyCart) {
+              emptyCart.style.display = 'flex';
+            }
+            if (cartTotal) {
+              cartTotal.style.display = 'none';
+            }
+            if (checkoutBtn) {
+              checkoutBtn.style.display = 'none';
+            }
+          }
+        }
+      }
+    } else {
+      updateItemPricesInModal(cart.items);
+    }
   })
   .catch(error => {
+    // Reset button state on error
+    resetButton(element);
     console.error('Error details:', error.message);
   });
 }
@@ -759,17 +792,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const plusBtn = document.querySelector(".single-product .product-number-more");
     const qtyInput = document.querySelector(".single-product .product-number-input");
 
-    minusBtn.addEventListener("click", function () {
-      let current = parseInt(qtyInput.value) || 1;
-      if (current > 1) {
-        qtyInput.value = current - 1;
-      }
-    });
+    if (minusBtn) {
+      minusBtn.addEventListener("click", function () {
+        let current = parseInt(qtyInput.value) || 1;
+        if (current > 1) {
+          qtyInput.value = current - 1;
+        }
+      });
+    }
 
-    plusBtn.addEventListener("click", function () {
-      let current = parseInt(qtyInput.value) || 1;
-      qtyInput.value = current + 1;
-    });
+    if (plusBtn) {
+      plusBtn.addEventListener("click", function () {
+        let current = parseInt(qtyInput.value) || 1;
+        qtyInput.value = current + 1;
+      });
+    }
   });
 
 document.addEventListener("DOMContentLoaded", () => {
