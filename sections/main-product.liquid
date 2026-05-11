@@ -60,7 +60,7 @@
             </div>
 
             {% if product.variants.first.sku != blank %}
-                <div class="product-details__art fade-in">SKU: {{ product.variants.first.sku }}</div>
+                <div class="product-details__art fade-in">SKU: #{{ product.variants.first.sku }}</div>
             {% endif %}
 
             {% if product.description != blank %}
