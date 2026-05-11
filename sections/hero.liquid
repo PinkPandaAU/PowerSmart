@@ -28,7 +28,7 @@ blank or section.settings.modal_video_url != blank or section.settings.video_ass
                 <div class="hero__visual">
                     <figure data-toggle="modal" data-target="#modalVideo" data-src="{{ section.settings.modal_video_url }}">
                         {%- if section.settings.video_asset != blank -%}
-                        <video src="{{ section.settings.video_asset | asset_url }}" autoplay loop muted playsinline></video>
+                        <video src="{{ section.settings.video_asset.sources[0].url }}" autoplay loop muted playsinline></video>
                         {%- endif -%}
                         <span class="icon-play">
                             <svg width="13" height="14">

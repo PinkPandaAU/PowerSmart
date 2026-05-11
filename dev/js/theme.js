@@ -293,6 +293,14 @@ if (document.querySelector("[data-toggle='modal']")) {
           if (src.includes("youtube.com") || src.includes("youtu.be")) {
             const separator = src.includes("?") ? "&" : "?";
             src = src + separator + "autoplay=1&mute=1&rel=0&enablejsapi=1&modestbranding=1";
+          } else if (src.includes("vimeo.com")) {
+            // Convert Vimeo URL to embed format
+            const vimeoRegex = /(?:vimeo\.com\/)(\d+)(?:\/.*)?/;
+            const match = src.match(vimeoRegex);
+            if (match) {
+              const videoId = match[1];
+              src = `https://player.vimeo.com/video/${videoId}?autoplay=1&mute=1`;
+            }
           }
 
           setTimeout(() => {
