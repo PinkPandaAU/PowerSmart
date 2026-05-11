@@ -94,7 +94,7 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="product-details__price">$49.95</div>
+                    <div class="product-details__price">{{ product.selected_or_first_available_variant.price | money }}</div>
                 </div>
 
                 <div class="product-details__buttons">
