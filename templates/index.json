@@ -18,7 +18,8 @@
         "body_text": "For safety and peace of mind, lithium batteries should be replaced every 3–4 years..",
         "button_label": "Buy Now",
         "button_link": "#buy-now",
-        "modal_video_url": "https://www.youtube.com/embed/GA7sSjXlLXs"
+        "modal_video_url": "https://vimeo.com/852858510",
+        "video_asset": "shopify://files/videos/power-smart-hero.mp4"
       }
     },
     "intro_rxqxGp": {
@@ -121,30 +122,13 @@
     },
     "products_Lcweww": {
       "type": "products",
-      "blocks": {
-        "product_AhmWKG": {
-          "type": "product",
-          "settings": {
-            "product": "replacement-lithium-battery-1x-battery"
-          }
-        },
-        "product_jEM7gk": {
-          "type": "product",
-          "settings": {
-            "product": "bundle-pack-replacement-lithium-batteries-3x-batteries"
-          }
-        }
-      },
-      "block_order": [
-        "product_AhmWKG",
-        "product_jEM7gk"
-      ],
       "name": "Products",
       "settings": {
         "subtitle": "Buy replacement batteries",
         "heading_text": "Get your <span>replacement</span> <span>batteries</span>",
         "offer_title": "Limited time special offer",
-        "offer_description": "Use the unique code provided by your retailer at checkout for an exclusive discount."
+        "offer_description": "Use the unique code provided by your retailer at checkout for an exclusive discount.",
+        "buy_now_product": []
       }
     },
     "faqs_eQDkVD": {
