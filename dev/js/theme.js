@@ -470,10 +470,12 @@ function updateCartModalWithAllItems(items) {
     const itemHTML = `
       <div class="cart-item">
         <figure>
+        <a href="${item.url}">
           <img src="${item.image}" alt="${item.title}" />
+        </a>
         </figure>
         <div class="cart-item-details">
-          <div class="cart-item-title">${item.title}${item.variant_title ? ` (${item.variant_title})` : ''}</div>
+          <div class="cart-item-title"><a href="${item.url}">${item.title}${item.variant_title ? ` (${item.variant_title})` : ''}</a></div>
           <div class="product-details__number">
             <div class="product-number">
               <button type="button" class="product-number-less">

@@ -213,10 +213,12 @@
                     <div class="product-details__bundle">
 
                         <figure>
-                            <img 
-                                src="{{ similar_product.featured_image | image_url }}" 
-                                alt="{{ similar_product.title }}"
-                            >
+                            <a href="{{ similar_product.url }}">
+                                <img 
+                                    src="{{ similar_product.featured_image | image_url }}" 
+                                    alt="{{ similar_product.title }}"
+                                >
+                            </a>
                         </figure>
 
                         <div class="product-details__bundle-text fade-in-wrapper">
@@ -225,7 +227,7 @@
                                 <h4>{{ similar.heading }}</h4>
                             {% endif %}
 
-                            <p>{{ similar_product.title }}</p>
+                            <p><a href="{{ similar_product.url }}">{{ similar_product.title }}</a></p>
 
                             <div class="product-details__bundle-price">{{ similar_product.price | money }}</div>
                             <div class="product-details__bundle-btn">

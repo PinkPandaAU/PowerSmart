@@ -86,6 +86,13 @@
       font-size: 14px;
       line-height: 129%;
       margin: 0 0 3px;
+
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     .product-details__number {
