@@ -816,6 +816,18 @@ document.addEventListener("DOMContentLoaded", function () {
         qtyInput.value = current + 1;
       });
     }
+
+    const videos = document.querySelectorAll('video');
+
+    if (!videos.length) {
+      return;
+    }
+
+    videos.forEach(video => {
+      video.play().catch(err => {
+        console.error('Autoplay prevented:', err);
+      });
+    });
   });
 
 document.addEventListener("DOMContentLoaded", () => {
