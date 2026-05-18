@@ -30,6 +30,7 @@
         {{content_for_header}}
         
         {% if template contains 'product' %}
+            {% assign details = product.metafields.custom.product_details %}
             <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
@@ -46,6 +47,15 @@
                         "@type": "Brand",
                         "name": {{ shop.name | json }}
                     },
+                    "manufacturer": {
+                        "@type": "Organization",
+                        "name": {{ product.vendor | json }}
+                    },
+                    {%- if product.type != blank -%}
+                    "category": {{ product.type | json }},
+                    {%- elsif product.collections.first != blank -%}
+                    "category": {{ product.collections.first.title | json }},
+                    {%- endif -%}
                     "sku": {{ product.selected_or_first_available_variant.sku | json }},
                     "mpn": {{ product.selected_or_first_available_variant.barcode | json }},
                     "offers": {
@@ -77,6 +87,17 @@
                             "bestRating": "5",
                             "worstRating": "1"
                         }
+                    {% endif %}
+                    {% if details != blank %},
+                        "additionalProperty": [
+                            {% for detail in details.value %}
+                            {
+                                "@type": "PropertyValue",
+                                "name": {{ detail.accordion_heading | json }},
+                                "value": {{ detail.accordion_body | metafield_tag | strip_html | json }}
+                            }{% unless forloop.last %},{% endunless %}
+                            {% endfor %}
+                        ]
                     {% endif %}
                 }
             </script>
