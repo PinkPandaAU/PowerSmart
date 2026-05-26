@@ -4,7 +4,12 @@
 
     <head>
         <meta charset="UTF-8" />
-        <title>Title</title>
+        <title>{{ page_title }}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+
+        {% if page_description %}
+            <meta name="description" content="{{ page_description | escape }}"/>
+        {% endif %}
+
         <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
