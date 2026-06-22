@@ -41,7 +41,7 @@
         "text": "<p>Just like smoke alarm batteries, lithium batteries should be replaced regularly.</p>",
         "button_label": "Get Replacement Batteries",
         "button_link": "#buy-now",
-        "image_mobile": "shopify://shop_images/CWP04_BatteryInfoGraphics_StopUsing-01_WebR.png",
+        "image_mobile": "shopify://shop_images/StopUsing.jpg",
         "image": "shopify://shop_images/StopUsing.jpg",
         "image_large": "shopify://shop_images/StopUsing.jpg"
       }
@@ -67,7 +67,7 @@
         "text": "<p>For peace of mind, replace every 5 - 6 years, or immediately if you notice these signs.</p>",
         "button_label": "Get Replacement Batteries",
         "button_link": "#buy-now",
-        "image_mobile": "shopify://shop_images/CWP04_BatteryInfoGraphics_Understanding-01_WebR.png",
+        "image_mobile": "shopify://shop_images/Understanding-Desktop.jpg",
         "image": "shopify://shop_images/Understanding-Desktop.jpg",
         "image_large": "shopify://shop_images/Understanding-Desktop.jpg"
       }
@@ -152,7 +152,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What are the warning signs of a battery that needs replacement?",
-            "answer": "Stop using your battery if:<ul><li>It loses charge quickly.</li><li>It takes longer to charge.</li><li>It heats up excessively while charging.</li><li>It has started swelling.</li><li>It has been dropped or damaged.</li></ul>"
+            "answer": "Stop using your battery if:<ul>\n<li>It loses charge quickly.</li>\n<li>It takes longer to charge.</li>\n<li>It heats up excessively while charging.</li>\n<li>It has started swelling.</li>\n<li>It has been dropped or damaged.</li>\n</ul>"
           }
         },
         "faq_item_mFtzEn": {
@@ -187,7 +187,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How should I care for my battery to make it last longer?",
-            "answer": "<ol><li>Avoid leaving it on charge overnight.</li><li>Don’t use or store it in high heat.</li><li>Don’t drop or damage it.</li><li>Store in a dry location when not in use.</li></ol>"
+            "answer": "<ol>\n<li>Avoid leaving it on charge overnight.</li>\n<li>Don’t use or store it in high heat.</li>\n<li>Don’t drop or damage it.</li>\n<li>Store in a dry location when not in use.</li>\n</ol>"
           }
         },
         "faq_item_FCPVTy": {
