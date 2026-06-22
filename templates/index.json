@@ -138,84 +138,84 @@
           "type": "faq_item",
           "settings": {
             "question": "Why should I replace my roller shutter battery?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "answer": "<p>Lithium batteries have a natural lifespan of 5 - 6 years. Over time, their performance declines and, in some cases, they may become unsafe. Replacing your battery ensures your system continues to operate safely and reliably.</p>"
           }
         },
         "faq_item_p9UqyR": {
           "type": "faq_item",
           "settings": {
             "question": "Is there a problem with my current battery?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          }
-        },
-        "faq_item_ELGaPB": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How should I care for my battery to make it last longer?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          }
-        },
-        "faq_item_FCPVTy": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How should I dispose of my old battery?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          }
-        },
-        "faq_item_mFtzEn": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Is this a recall?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          }
-        },
-        "faq_item_LQ7JN9": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What if my battery is less than three years old?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          }
-        },
-        "faq_item_Nwqx7U": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Should I be using a third-party charger?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "answer": "<p>Not necessarily. If your battery is less than three years old and performing well, you may not need a replacement yet. However, if it’s older, or you notice signs of decline, replacement is recommended.</p>"
           }
         },
         "faq_item_VqfChQ": {
           "type": "faq_item",
           "settings": {
             "question": "What are the warning signs of a battery that needs replacement?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "answer": "<p>Stop using your battery if:</p><ul><li>It loses charge quickly.</li><li>It takes longer to charge.</li><li>It heats up excessively while charging.</li><li>It has started swelling.</li><li>It has been dropped or damaged.</li></ul>"
           }
         },
-        "faq_item_d6QUB7": {
+        "faq_item_mFtzEn": {
           "type": "faq_item",
           "settings": {
-            "question": "Who do I contact if I have questions?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "question": "Is this a recall?",
+            "answer": "<p>No. It is a proactive program from CW Products to encourage regular battery care and replacement, similar to checking your smoke alarm batteries each year.</p>"
           }
         },
         "faq_item_LKphPR": {
           "type": "faq_item",
           "settings": {
             "question": "How often should I replace my roller shutter battery?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "answer": "<p>For peace of mind, lithium batteries should be replaced every 5 - 6 years.</p>"
+          }
+        },
+        "faq_item_LQ7JN9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if my battery is less than five years old?",
+            "answer": "<p>You may not need to replace it right away. Continue to use your battery but keep an eye on its performance. If you notice any of the warning signs, replace it immediately.</p>"
+          }
+        },
+        "faq_item_Nwqx7U": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Should I be using a third-party charger?",
+            "answer": "<p>No. We recommend only using chargers that are supplied by the manufacturer.</p>"
+          }
+        },
+        "faq_item_ELGaPB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I care for my battery to make it last longer?",
+            "answer": "<ol><li>Avoid leaving it on charge overnight.</li><li>Don’t use or store it in high heat.</li><li>Don’t drop or damage it.</li><li>Store in a dry location when not in use.</li></ol>"
+          }
+        },
+        "faq_item_FCPVTy": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I dispose of my old battery?",
+            "answer": "<p>Do not dispose of lithium batteries in household waste. Please take your old battery to a local recycling facility, battery collection point, or contact your local council for safe disposal options.</p>"
+          }
+        },
+        "faq_item_d6QUB7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who do I contact if I have questions?",
+            "answer": "<p>You can reach CW Products directly at <a href=\"tel:1300052417\">1300 052 417</a> or <a href=\"mailto:enquiries@cwproducts.com.au\">enquiries@cwproducts.com.au</a>.</p>"
           }
         }
       },
       "block_order": [
         "faq_item_RJnVgA",
         "faq_item_p9UqyR",
-        "faq_item_ELGaPB",
-        "faq_item_FCPVTy",
+        "faq_item_VqfChQ",
         "faq_item_mFtzEn",
+        "faq_item_LKphPR",
         "faq_item_LQ7JN9",
         "faq_item_Nwqx7U",
-        "faq_item_VqfChQ",
-        "faq_item_d6QUB7",
-        "faq_item_LKphPR"
+        "faq_item_ELGaPB",
+        "faq_item_FCPVTy",
+        "faq_item_d6QUB7"
       ],
       "name": "FAQs",
       "settings": {
